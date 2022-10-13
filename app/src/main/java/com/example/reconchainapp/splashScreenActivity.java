@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.example.reconchainapp.user.signupActivity;
+
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -21,9 +23,9 @@ public class splashScreenActivity extends AppCompatActivity {
         t.schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent i =  new Intent(splashScreenActivity.this, logInActivity.class);
+                Intent i =  new Intent(splashScreenActivity.this, signupActivity.class);
                 startActivity(i);
             }
-        },2000);
+        },500);
     }
 }

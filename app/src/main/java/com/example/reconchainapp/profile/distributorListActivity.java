@@ -1,15 +1,17 @@
-package com.example.reconchainapp;
+package com.example.reconchainapp.profile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class logInActivity extends AppCompatActivity {
+import com.example.reconchainapp.R;
+
+public class distributorListActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_log_in);
+        setContentView(R.layout.activity_distributor_list);
         getSupportActionBar().hide();
     }
 }

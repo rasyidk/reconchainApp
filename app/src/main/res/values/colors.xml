@@ -12,4 +12,6 @@
     <color name="color3">#18AE00</color>
     <color name="color4">#DE0000</color>
     <color name="color5">#E1D800</color>
+    <color name="bgwhite">#F5F5F5</color>
+    <color name="hint">#696969</color>
 </resources>

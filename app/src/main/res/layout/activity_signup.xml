@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color1"
+    tools:context=".user.signupActivity">
+
+    <LinearLayout
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign Up"
+            android:textColor="@color/color2"
+            android:fontFamily="@font/poppins_bold"
+            android:textAlignment="center"
+            android:textSize="30dp"/>
+
+
+        <EditText
+            android:id="@+id/signup_et_username"
+            android:layout_marginTop="40dp"
+            android:textColorHint="@color/hint"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:hint="Username"
+            android:background="@drawable/round_edittext"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/color1"
+            />
+
+        <EditText
+            android:id="@+id/signup_et_email"
+            android:textColorHint="@color/hint"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:hint="Email"
+            android:background="@drawable/round_edittext"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/color1"/>
+
+        <EditText
+            android:id="@+id/signup_et_password"
+            android:textColorHint="@color/hint"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:hint="Password"
+            android:background="@drawable/round_edittext"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/color1"/>
+        <EditText
+            android:id="@+id/signup_et_confirmpass"
+            android:textColorHint="@color/hint"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:hint="Confirm password"
+            android:background="@drawable/round_edittext"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/color1"/>
+
+        <EditText
+            android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
+            android:editable="false"
+            android:id="@+id/signup_et_role"
+            android:textColorHint="@color/hint"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:hint="Role"
+            android:background="@drawable/round_edittext"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/color1"/>
+
+        <EditText
+
+            android:id="@+id/signup_et_company"
+            android:textColorHint="@color/hint"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:hint="Company"
+            android:background="@drawable/round_edittext"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/color1"/>
+
+        <EditText
+            android:id="@+id/signup_et_location"
+            android:textColorHint="@color/hint"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:hint="Location"
+            android:background="@drawable/round_edittext"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/color1"/>
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/signup_bt_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_button"
+            android:text="Sign Up"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_marginTop="60dp"/>
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/signup_bt_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log In"
+                android:padding="0dp"
+                android:layout_marginBottom="100dp"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:layout_marginTop="10dp"
+                android:textAllCaps="false"
+                android:textColor="@color/color2"
+                android:fontFamily="@font/poppins_bold"
+                android:background="?android:attr/selectableItemBackground"
+                android:layout_centerHorizontal="true"/>
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</ScrollView>
