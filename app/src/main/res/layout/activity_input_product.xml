@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bgwhite"
+    tools:context=".input.inputProductActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ip_bt_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="@dimen/mainmarginn"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:background="@drawable/ic_baseline_arrow_back_24"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_marginRight="@dimen/mainmarginn"
+            android:textAlignment="center"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_height="wrap_content"
+            android:text="Input Product"
+            android:textColor="@color/color2"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:fontFamily="@font/poppins_semibold"
+            android:textSize="25dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:text="ID product"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_marginTop="@dimen/mainmarginn"
+            android:textSize="16dp"/>
+
+        <EditText
+            android:id="@+id/ip_et_idproduct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="IDX8881778"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_marginRight="@dimen/mainmarginn"
+            android:padding="10dp"
+            android:background="@drawable/round_edittext_grey"/>
+
+        <TextView
+            android:textColor="@color/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Product Name"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_marginTop="@dimen/mainmarginn"
+            android:textSize="16dp"/>
+
+        <EditText
+            android:id="@+id/ip_et_productname"
+            android:textColor="@color/textColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_marginRight="@dimen/mainmarginn"
+            android:padding="10dp"
+            android:background="@drawable/round_edittext_grey"/>
+
+        <TextView
+            android:textColor="@color/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date of Manufactur"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_marginTop="@dimen/mainmarginn"
+            android:textSize="16dp"/>
+
+        <EditText
+            android:id="@+id/ip_et_date"
+            android:textColor="@color/textColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_marginRight="@dimen/mainmarginn"
+            android:padding="10dp"
+            android:background="@drawable/round_edittext_grey"/>
+
+        <TextView
+            android:textColor="@color/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Manufacturing Location"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_marginTop="@dimen/mainmarginn"
+            android:textSize="16dp"/>
+
+        <EditText
+            android:id="@+id/ip_et_locatuionmanuf"
+            android:textColor="@color/textColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_marginRight="@dimen/mainmarginn"
+            android:padding="10dp"
+            android:background="@drawable/round_edittext_grey"/>
+
+        <TextView
+            android:textColor="@color/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_marginTop="@dimen/mainmarginn"
+            android:textSize="16dp"/>
+
+        <EditText
+            android:id="@+id/ip_et_company"
+            android:textColor="@color/textColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_marginRight="@dimen/mainmarginn"
+            android:padding="10dp"
+            android:background="@drawable/round_edittext_grey"/>
+
+        <TextView
+            android:textColor="@color/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Raw Material"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_marginTop="@dimen/mainmarginn"
+            android:textSize="16dp"/>
+        <TextView
+            android:textColor="@color/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Separate with Comma"
+
+            android:fontFamily="@font/poppins"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:textSize="10dp"/>
+
+        <EditText
+            android:id="@+id/ip_et_raw"
+            android:textColor="@color/textColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_marginRight="@dimen/mainmarginn"
+            android:padding="10dp"
+            android:background="@drawable/round_edittext_grey"/>
+
+        <TextView
+            android:textColor="@color/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carbon Used"
+            android:fontFamily="@font/poppins_semibold"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_marginTop="@dimen/mainmarginn"
+            android:textSize="16dp"/>
+
+        <EditText
+            android:id="@+id/ip_et_carbonused"
+            android:textColor="@color/textColor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_marginRight="@dimen/mainmarginn"
+            android:padding="10dp"
+            android:background="@drawable/round_edittext_grey"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ip_bt_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Save"
+            android:textSize="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:background="@drawable/round_rel_button"
+            android:textAllCaps="false"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:layout_marginRight="@dimen/mainmarginn"
+            android:layout_marginBottom="40dp"
+            android:layout_marginTop="40dp"/>
+    </LinearLayout>
+
+</ScrollView>

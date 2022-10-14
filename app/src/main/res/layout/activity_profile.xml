@@ -111,6 +111,7 @@
                 android:textSize="15dp" />
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/pr_rel_todl"
             android:layout_width="match_parent"
             android:layout_marginBottom="10dp"
             android:background="@drawable/round_rel_button"
@@ -129,6 +130,7 @@
                 android:textSize="15dp" />
         </RelativeLayout>
         <RelativeLayout
+            android:id="@+id/pr_rel_logout"
             android:layout_width="match_parent"
             android:layout_marginBottom="10dp"
             android:background="@drawable/round_rel_button"
