@@ -31,9 +31,10 @@
                     android:orientation="vertical">
 
                     <TextView
+                        android:id="@+id/fr_hm_tv_etname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pudyasta Satria Pina"
+                    android:text="Hi, Pudyasta Satria Pina"
                         android:fontFamily="@font/poppins_semibold"
                     android:textColor="@color/white"/>
 
@@ -41,7 +42,7 @@
                         android:layout_width="wrap_content"
                         android:fontFamily="@font/poppins"
                         android:layout_height="wrap_content"
-                        android:text="Pudyasta Satria Pina"
+                        android:text="How's it going!"
                         android:textColor="@color/white"/>
                 </LinearLayout>
 

@@ -2,7 +2,9 @@ package com.example.reconchainapp.user;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,6 +12,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.reconchainapp.R;
+import com.example.reconchainapp.landingActivity;
 
 public class logInActivity extends AppCompatActivity {
 
@@ -31,11 +34,42 @@ public class logInActivity extends AppCompatActivity {
         bt_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                SharedPreferences valuser = logInActivity.this.getSharedPreferences("valuser", Context.MODE_PRIVATE);
+
                 if (et_username.getText().toString().equals("") || et_password.getText().toString().equals("")){
                     Toast.makeText(getApplicationContext(),"Fill the Blank!",Toast.LENGTH_LONG).show();
                 }else {
-                    Intent i =  new Intent(logInActivity.this, logInActivity.class);
-                    startActivity(i);
+                    String username, password;
+                    username = et_username.getText().toString();
+                    password = et_password.getText().toString();
+                    if (username.equals("produsen") && password.equals("123")){
+                        Intent i =  new Intent(logInActivity.this, landingActivity.class);
+                        startActivity(i);
+
+                        SharedPreferences.Editor editor = valuser.edit();
+                        editor.putString("username", username);
+                        editor.putString("name", "pudyasta");
+                        editor.putString("role", "produsen");
+                        editor.putString("id", "12122SSSS");
+                        editor.apply();
+
+                    }else if (username.equals("distributor") && password.equals("123")){
+                        Intent i =  new Intent(logInActivity.this, landingActivity.class);
+                        startActivity(i);
+
+                        SharedPreferences.Editor editor = valuser.edit();
+                        editor.putString("username", username);
+                        editor.putString("name", "rasyidk");
+                        editor.putString("role", "distributor");
+                        editor.putString("id", "688aaaaa");
+                        editor.apply();
+
+                    }else {
+                        Toast.makeText(getApplicationContext(),"Invalid Account!", Toast.LENGTH_LONG).show();
+                    }
+
+
                 }
             }
         });

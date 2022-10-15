@@ -59,35 +59,38 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
+            android:inputType="textPassword"
             android:hint="Password"
-            android:background="@drawable/round_edittext"
-            android:fontFamily="@font/poppins"
-            android:textColor="@color/color1"/>
-        <EditText
-            android:id="@+id/signup_et_confirmpass"
-            android:textColorHint="@color/hint"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:hint="Confirm password"
             android:background="@drawable/round_edittext"
             android:fontFamily="@font/poppins"
             android:textColor="@color/color1"/>
 
         <EditText
-            android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24"
-            android:editable="false"
-            android:id="@+id/signup_et_role"
-            android:textColorHint="@color/hint"
-            android:layout_marginTop="20dp"
+            android:id="@+id/signup_et_confirmpass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:hint="Role"
+            android:layout_marginTop="20dp"
             android:background="@drawable/round_edittext"
             android:fontFamily="@font/poppins"
-            android:textColor="@color/color1"/>
+            android:hint="Confirm password"
+            android:inputType="textPassword"
+            android:padding="15dp"
+            android:textColor="@color/color1"
+            android:textColorHint="@color/hint" />
+
+        <EditText
+            android:id="@+id/signup_et_role"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/round_edittext"
+            android:drawableRight="@drawable/ic_baseline_arrow_forward_ios_24_black"
+            android:editable="false"
+            android:fontFamily="@font/poppins"
+            android:hint="Role"
+            android:padding="15dp"
+            android:textColor="@color/color1"
+            android:textColorHint="@color/hint" />
 
         <EditText
 

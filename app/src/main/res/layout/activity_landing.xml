@@ -61,7 +61,7 @@
             android:lines="2"/>
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/welcome_bt_getstarted"
+            android:id="@+id/landing_bt_getstarted"
             android:layout_margin="@dimen/mainmarginn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

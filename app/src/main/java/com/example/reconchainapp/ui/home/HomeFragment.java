@@ -1,6 +1,8 @@
 package com.example.reconchainapp.ui.home;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -37,6 +39,11 @@ public class HomeFragment extends Fragment {
                 startActivity(i);
             }
         });
+
+        TextView textView = binding.frHmTvEtname;
+        SharedPreferences preferences = this.getActivity().getSharedPreferences("valuser", Context.MODE_PRIVATE);
+        String name = preferences.getString("name","");
+        textView.setText(name);
 
         return root;
     }

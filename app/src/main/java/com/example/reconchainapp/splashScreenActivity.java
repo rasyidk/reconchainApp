@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.example.reconchainapp.input.inputProductActivity;
 import com.example.reconchainapp.profile.profileActivity;
+import com.example.reconchainapp.user.logInActivity;
 import com.example.reconchainapp.user.signupActivity;
 
 import java.util.Timer;
@@ -25,7 +26,7 @@ public class splashScreenActivity extends AppCompatActivity {
         t.schedule(new TimerTask() {
             @Override
             public void run() {
-                Intent i =  new Intent(splashScreenActivity.this, profileActivity.class);
+                Intent i =  new Intent(splashScreenActivity.this, logInActivity.class);
                 startActivity(i);
             }
         },500);

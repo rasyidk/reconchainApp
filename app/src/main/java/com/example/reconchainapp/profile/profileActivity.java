@@ -3,11 +3,14 @@ package com.example.reconchainapp.profile;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.reconchainapp.R;
@@ -18,14 +21,29 @@ import com.example.reconchainapp.user.logInActivity;
 public class profileActivity extends AppCompatActivity {
 
     RelativeLayout todl,rel_logout;
+    TextView tv_name, tv_id,tv_role;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        SharedPreferences preferences = profileActivity.this.getSharedPreferences("valuser", Context.MODE_PRIVATE);
+        String name = preferences.getString("name","");
+        String role = preferences.getString("role","");
+        String id = preferences.getString("id","");
         getSupportActionBar().hide();
+
 
         todl = findViewById(R.id.pr_rel_todl);
         rel_logout = findViewById(R.id.pr_rel_logout);
+
+        tv_name =  findViewById(R.id.pr_tv_nama);
+        tv_id = findViewById(R.id.pr_tv_id);
+        tv_role = findViewById(R.id.pr_tv_role);
+
+        tv_name.setText(name);
+        tv_id.setText(id);
+        tv_role.setText(role);
 
         todl.setOnClickListener(new View.OnClickListener() {
             @Override

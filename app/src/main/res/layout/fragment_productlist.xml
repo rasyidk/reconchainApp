@@ -27,11 +27,12 @@
 
         <EditText
             android:textColor="@color/black"
-            android:textColorHint="@color/bgwhite"
+            android:textColorHint="@color/hint"
             android:layout_marginTop="@dimen/mainmarginn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Search By ID"
+
             android:background="@drawable/round_edittext_white"
             android:padding="10dp"/>
 
@@ -76,10 +77,10 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/poppins_bold"
-                                android:text="0.8"
-                                android:minHeight="0dp"
                                 android:includeFontPadding="false"
                                 android:lineSpacingExtra="0dp"
+                                android:minHeight="0dp"
+                                android:text="0.5"
                                 android:textAlignment="center"
                                 android:textColor="@color/white"
                                 android:textSize="30dp" />
@@ -160,6 +161,7 @@
                         android:layout_centerHorizontal="true">
 
                         <ImageView
+                            android:id="@+id/frpl_img_next1"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:padding="10dp"
@@ -187,7 +189,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_centerVertical="true"
-                        android:background="@drawable/round_rel_green">
+                        android:background="@drawable/round_rel_red">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -200,7 +202,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/poppins_bold"
-                                android:text="0.8"
+                                android:text="10"
                                 android:minHeight="0dp"
                                 android:includeFontPadding="false"
                                 android:lineSpacingExtra="0dp"
@@ -229,7 +231,7 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_toLeftOf="@id/fpl_rel1"
+                        android:layout_toLeftOf="@id/fpl_rel2"
                         android:layout_height="match_parent">
                         <LinearLayout
                             android:layout_marginLeft="@dimen/mainmarginn"
@@ -284,6 +286,7 @@
                             android:layout_centerHorizontal="true">
 
                             <ImageView
+                                android:id="@+id/frpl_img_next2"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:padding="10dp"
@@ -311,7 +314,7 @@
                         android:layout_width="80dp"
                         android:layout_height="80dp"
                         android:layout_centerVertical="true"
-                        android:background="@drawable/round_rel_green">
+                        android:background="@drawable/round_rel_yellow">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -324,7 +327,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/poppins_bold"
-                                android:text="0.8"
+                                android:text="5"
                                 android:minHeight="0dp"
                                 android:includeFontPadding="false"
                                 android:lineSpacingExtra="0dp"
@@ -353,7 +356,7 @@
 
                     <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_toLeftOf="@id/fpl_rel1"
+                        android:layout_toLeftOf="@id/fpl_rel3"
                         android:layout_height="match_parent">
                         <LinearLayout
                             android:layout_marginLeft="@dimen/mainmarginn"
@@ -408,6 +411,7 @@
                             android:layout_centerHorizontal="true">
 
                             <ImageView
+                                android:id="@+id/frpl_img_next3"
                                 android:layout_width="50dp"
                                 android:layout_height="50dp"
                                 android:padding="10dp"
@@ -419,6 +423,133 @@
                     </RelativeLayout>
 
                 </RelativeLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="@dimen/mainmarginn"
+                android:background="@drawable/round_linear"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+
+                    android:layout_height="match_parent">
+                    <RelativeLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/round_rel_green">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_bold"
+                                android:text="0.5"
+                                android:minHeight="0dp"
+                                android:includeFontPadding="false"
+                                android:lineSpacingExtra="0dp"
+                                android:textAlignment="center"
+                                android:textColor="@color/white"
+                                android:textSize="30dp" />
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="carbon"
+                                android:includeFontPadding="false"
+                                android:lineSpacingExtra="0dp"
+                                android:textAlignment="center"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:textColor="@color/white"
+                                android:textSize="15dp"/>
+                        </LinearLayout>
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_toLeftOf="@id/fpl_rel4"
+                        android:layout_height="match_parent">
+                        <LinearLayout
+                            android:layout_marginLeft="@dimen/mainmarginn"
+                            android:layout_marginRight="@dimen/mainmarginn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:orientation="vertical">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Item Produced"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins_semibold"/>
+
+                            <TextView
+                                android:textSize="10dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="PT industri jaya"/>
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="horizontal">
+                                <TextView
+                                    android:textSize="10dp"
+                                    android:textColor="@color/black"
+                                    android:fontFamily="@font/poppins_semibold"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="PT industri jaya"/>
+                            </LinearLayout>
+
+                        </LinearLayout>
+
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/fpl_rel4"
+                        android:layout_width="50dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="@dimen/mainmarginn"
+                        android:layout_height="match_parent">
+                        <RelativeLayout
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:background="@drawable/circle_bg"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true">
+
+                            <ImageView
+                                android:id="@+id/frpl_img_next4"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:padding="10dp"
+                                android:src="@drawable/ic_baseline_arrow_forward_ios_24"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"/>
+
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
             </LinearLayout>
 
         </LinearLayout>

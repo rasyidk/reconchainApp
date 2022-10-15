@@ -1,9 +1,11 @@
 package com.example.reconchainapp.ui.productList;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -12,6 +14,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 
 import com.example.reconchainapp.databinding.FragmentProductlistBinding;
+import com.example.reconchainapp.splashScreenActivity;
+import com.example.reconchainapp.trackingProductActivity;
+import com.example.reconchainapp.user.logInActivity;
 
 public class productListFragment extends Fragment {
 
@@ -24,6 +29,46 @@ public class productListFragment extends Fragment {
 
         binding = FragmentProductlistBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+
+        ImageView img1,img2,img3,img4;
+
+        img1 = binding.frplImgNext1;
+        img2 = binding.frplImgNext2;
+        img3 = binding.frplImgNext3;
+        img4 = binding.frplImgNext4;
+
+        img1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =  new Intent(getContext(), trackingProductActivity.class);
+                startActivity(i);
+            }
+        });
+
+        img2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =  new Intent(getContext(), trackingProductActivity.class);
+                startActivity(i);
+            }
+        });
+
+        img3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =  new Intent(getContext(), trackingProductActivity.class);
+                startActivity(i);
+            }
+        });
+        img4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =  new Intent(getContext(), trackingProductActivity.class);
+                startActivity(i);
+            }
+        });
+
+
 
         return root;
     }
