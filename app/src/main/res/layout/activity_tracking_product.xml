@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color1"
+    android:fillViewport="true"
+    tools:context=".ui.home.HomeFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="380dp"
+            android:orientation="vertical"
+            android:background="@color/color1">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/dl_bt_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/mainmarginn"
+                android:layout_marginLeft="@dimen/mainmarginn"
+                android:background="@drawable/ic_baseline_arrow_back_24_white"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginLeft="@dimen/mainmarginn"
+                android:layout_height="wrap_content"
+                android:text="Tracking Product"
+                android:textColor="@color/white"
+                android:layout_marginTop="@dimen/normal_margin"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="25dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Delivered"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/mainmarginn"
+                android:background="@drawable/round_button_green"
+                android:paddingRight="20dp"
+                android:paddingLeft="20dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Product Name"
+                android:layout_marginTop="@dimen/mainmarginn"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/mainmarginn"
+                android:fontFamily="@font/poppins_semibold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Le Minearal"
+                android:textSize="12dp"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/mainmarginn"
+                android:fontFamily="@font/poppins"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Manufacture"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/mainmarginn"
+                android:fontFamily="@font/poppins_semibold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="17 August 2022"
+                android:textSize="12dp"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/mainmarginn"
+                android:fontFamily="@font/poppins"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Company"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/mainmarginn"
+                android:fontFamily="@font/poppins_semibold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PT Vokasi Indonesia"
+                android:textSize="12dp"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/mainmarginn"
+                android:fontFamily="@font/poppins"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Raw Material"
+                android:layout_marginTop="5dp"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/mainmarginn"
+                android:fontFamily="@font/poppins_semibold"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Air, Pengawet, Tanpa gula"
+                android:textSize="12dp"
+                android:textColor="@color/white"
+                android:layout_marginLeft="@dimen/mainmarginn"
+                android:fontFamily="@font/poppins"/>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/round_top"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+
+                android:layout_marginTop="@dimen/mainmarginn">
+
+                <LinearLayout
+                    android:layout_marginLeft="@dimen/mainmarginn"
+                    android:layout_marginRight="@dimen/mainmarginn"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <ImageView
+
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_baseline_circle_24"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/mainmarginn"
+                            android:layout_marginRight="@dimen/mainmarginn"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:text="Production | 20 September 2022"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text="Pabrik Sidomuncul"
+                                android:textColor="@color/black"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text="7.5 Kg Carbon Release"
+                                android:textColor="@color/black"
+                                android:textSize="10dp" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginLeft="@dimen/mainmarginn"
+                    android:layout_marginRight="@dimen/mainmarginn"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <ImageView
+
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_baseline_circle_24"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/mainmarginn"
+                            android:layout_marginRight="@dimen/mainmarginn"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:text="Distribution | 25 September 2022"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text="Gudang Pertamina Solo"
+                                android:textColor="@color/black"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text="15 Kg Carbon Release"
+                                android:textColor="@color/black"
+                                android:textSize="10dp" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_marginLeft="@dimen/mainmarginn"
+                    android:layout_marginRight="@dimen/mainmarginn"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <ImageView
+
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_baseline_circle_24"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/mainmarginn"
+                            android:layout_marginRight="@dimen/mainmarginn"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:text="Distribution | 26 September 2022"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text="Gudang Haha Yogyakata"
+                                android:textColor="@color/black"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text="7.5 Kg Carbon Release"
+                                android:textColor="@color/black"
+                                android:textSize="10dp" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_marginLeft="@dimen/mainmarginn"
+                    android:layout_marginRight="@dimen/mainmarginn"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:orientation="horizontal">
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+                        <ImageView
+
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_centerVertical="true"
+                            android:src="@drawable/ic_baseline_circle_24"/>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/mainmarginn"
+                            android:layout_marginRight="@dimen/mainmarginn"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:text="Distirbution | 28 September 2022"
+                                android:textColor="@color/black" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text="Indomaret Jl Kaliurang"
+                                android:textColor="@color/black"
+                                android:textSize="10dp" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins"
+                                android:text="15 Kg Carbon Release"
+                                android:textColor="@color/black"
+                                android:textSize="10dp" />
+
+                        </LinearLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/mainmarginn"
+                    android:text="47.5 Kg Carbon Released for This Product"
+                    android:fontFamily="@font/poppins_semibold"
+                    android:textColor="@color/black"
+                    android:textAlignment="center"/>
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>
