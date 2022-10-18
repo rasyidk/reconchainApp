@@ -32,6 +32,7 @@
         android:layout_marginLeft="@dimen/mainmarginn"
         android:textColor="@color/color1"
         android:fontFamily="@font/poppins"
+        android:drawableRight="@drawable/ic_baseline_search_24"
         android:textColorHint="#696969"
         android:layout_marginTop="@dimen/mainmarginn"
         android:layout_width="match_parent"
@@ -42,26 +43,10 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/dl_bt_tods"
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="@dimen/mainmarginn"
-            android:layout_marginBottom="@dimen/mainmarginn"
-            android:layout_marginRight="@dimen/mainmarginn"
-            android:background="@drawable/round_rel_button"
-            android:fontFamily="@font/poppins_semibold"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:text="Distributor Request"
-            android:textAllCaps="false"
-            android:textColor="@color/white" />
-    </RelativeLayout>
+        android:layout_height="wrap_content"/>
 
     <LinearLayout
+        android:layout_marginTop="@dimen/mainmarginn"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
@@ -69,21 +54,23 @@
         android:orientation="vertical">
 
         <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
             android:layout_marginLeft="@dimen/mainmarginn"
             android:layout_marginRight="@dimen/mainmarginn"
             android:background="@drawable/round_linear"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
             android:orientation="horizontal">
+
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent">
+
                 <ImageView
-                    android:layout_marginLeft="10dp"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_baseline_account_circle_black_24"/>
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/ic_baseline_account_circle_black_24" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -91,59 +78,65 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:layout_marginLeft="@dimen/mainmarginn"
-                    android:layout_marginRight="@dimen/mainmarginn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/mainmarginn"
+                    android:layout_marginRight="@dimen/mainmarginn"
                     android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Zainudin"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/poppins_semibold"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="10dp"
-                        android:text="Maluku Area"/>
-                    <TextView
-                        android:textSize="10dp"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/poppins"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Maluku Tengah, Kep Maluku"/>
 
                     <TextView
-                        android:textSize="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Last Delivery on 17 8 2022"
                         android:fontFamily="@font/poppins_semibold"
-                        android:textColor="@color/black"/>
+                        android:text="Zainudin"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Maluku Area"
+                        android:textColor="@color/black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Maluku Tengah, Kep Maluku"
+                        android:textColor="@color/black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Last Delivery on 17 8 2022"
+                        android:textColor="@color/black"
+                        android:textSize="10dp" />
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>
+
         <LinearLayout
-            android:layout_marginLeft="@dimen/mainmarginn"
-            android:layout_marginRight="@dimen/mainmarginn"
-            android:background="@drawable/round_linear"
             android:layout_width="match_parent"
             android:layout_height="100dp"
+            android:layout_marginLeft="@dimen/mainmarginn"
             android:layout_marginTop="@dimen/mainmarginn"
+            android:layout_marginRight="@dimen/mainmarginn"
+            android:background="@drawable/round_linear"
             android:orientation="horizontal">
+
             <RelativeLayout
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent">
+
                 <ImageView
-                    android:layout_marginLeft="10dp"
                     android:layout_width="80dp"
                     android:layout_height="80dp"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_baseline_account_circle_black_24"/>
+                    android:layout_marginLeft="10dp"
+                    android:src="@drawable/ic_baseline_account_circle_black_24" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -151,39 +144,42 @@
                 android:layout_height="match_parent">
 
                 <LinearLayout
-                    android:layout_marginLeft="@dimen/mainmarginn"
-                    android:layout_marginRight="@dimen/mainmarginn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
+                    android:layout_marginLeft="@dimen/mainmarginn"
+                    android:layout_marginRight="@dimen/mainmarginn"
                     android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ammar"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/poppins_semibold"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textColor="@color/black"
-                        android:textSize="10dp"
-                        android:text="Yogyakarta Area"/>
-                    <TextView
-                        android:textSize="10dp"
-                        android:textColor="@color/black"
-                        android:fontFamily="@font/poppins"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Cibinong Kab. Bogor"/>
 
                     <TextView
-                        android:textSize="10dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Last Delivery on 17 8 2022"
                         android:fontFamily="@font/poppins_semibold"
-                        android:textColor="@color/black"/>
+                        android:text="Ammar"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yogyakarta Area"
+                        android:textColor="@color/black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="Cibinong Kab. Bogor"
+                        android:textColor="@color/black"
+                        android:textSize="10dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins_semibold"
+                        android:text="Last Delivery on 17 8 2022"
+                        android:textColor="@color/black"
+                        android:textSize="10dp" />
                 </LinearLayout>
             </RelativeLayout>
         </LinearLayout>

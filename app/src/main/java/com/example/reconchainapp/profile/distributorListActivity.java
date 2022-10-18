@@ -20,16 +20,8 @@ public class distributorListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_distributor_list);
         getSupportActionBar().hide();
 
-        bt_tods = findViewById(R.id.dl_bt_tods);
-        bt_back = findViewById(R.id.dl_bt_back);
 
-        bt_tods.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i =  new Intent(distributorListActivity.this, distributorRequestActivity.class);
-                startActivity(i);
-            }
-        });
+        bt_back = findViewById(R.id.dl_bt_back);
 
         bt_back.setOnClickListener(new View.OnClickListener() {
             @Override

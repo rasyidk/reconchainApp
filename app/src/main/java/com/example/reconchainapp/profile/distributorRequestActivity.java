@@ -24,7 +24,7 @@ public class distributorRequestActivity extends AppCompatActivity {
         bt_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i =  new Intent(distributorRequestActivity.this, distributorListActivity.class);
+                Intent i =  new Intent(distributorRequestActivity.this, profileActivity.class);
                 startActivity(i);
             }
         });

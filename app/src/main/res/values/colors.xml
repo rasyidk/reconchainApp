@@ -15,4 +15,5 @@
     <color name="textColor">#848484</color>
     <color name="bgwhite">#F5F5F5</color>
     <color name="hint">#696969</color>
+    <color name="grey">#E4E4E4</color>
 </resources>
