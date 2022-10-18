@@ -25,6 +25,7 @@ public class landingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i =  new Intent(landingActivity.this, navBottomActivity.class);
                 startActivity(i);
+                finish();
             }
         });
 

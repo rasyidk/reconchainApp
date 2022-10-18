@@ -9,12 +9,14 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.reconchainapp.R;
 import com.example.reconchainapp.input.inputProductActivity;
+import com.example.reconchainapp.navBottomActivity;
 import com.example.reconchainapp.splashScreenActivity;
 import com.example.reconchainapp.user.logInActivity;
 
@@ -22,6 +24,7 @@ public class profileActivity extends AppCompatActivity {
 
     RelativeLayout todl,rel_logout;
     TextView tv_name, tv_id,tv_role;
+    Button pr_btback;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +37,7 @@ public class profileActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
+        pr_btback = findViewById(R.id.pr_btback);
         todl = findViewById(R.id.pr_rel_todl);
         rel_logout = findViewById(R.id.pr_rel_logout);
 
@@ -45,6 +49,13 @@ public class profileActivity extends AppCompatActivity {
         tv_id.setText(id);
         tv_role.setText(role);
 
+        pr_btback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =  new Intent(profileActivity.this, navBottomActivity.class);
+                startActivity(i);
+            }
+        });
         todl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,6 +63,10 @@ public class profileActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        if (role.equals("distributor")){
+            todl.setVisibility(View.GONE);
+        }
 
         rel_logout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,6 +86,7 @@ public class profileActivity extends AppCompatActivity {
                     case DialogInterface.BUTTON_POSITIVE:
                         Intent i =  new Intent(profileActivity.this, logInActivity.class);
                         startActivity(i);
+                        finish();
                         break;
 
                     case DialogInterface.BUTTON_NEGATIVE:

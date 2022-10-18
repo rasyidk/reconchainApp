@@ -54,7 +54,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Taking a little action for taking \n down the climate change"
+            android:text="Taking a little action to taking \n down the climate change"
             android:textColor="@color/white"
             android:textAlignment="center"
             android:fontFamily="@font/poppins"

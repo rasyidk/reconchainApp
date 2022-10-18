@@ -42,9 +42,9 @@ public class inputProductActivity extends AppCompatActivity {
                         et_raw.getText().toString().equals("") ||
                         et_carbon.getText().toString().equals("")
                 ){
-                    Toast.makeText(getApplicationContext(),"cant blank fill!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"field cant be empty!",Toast.LENGTH_LONG).show();
                 }else {
-                    Toast.makeText(getApplicationContext(),"Saved!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"saved!",Toast.LENGTH_LONG).show();
                 }
 
             }

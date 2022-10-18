@@ -195,7 +195,8 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Item Produced"
+                                android:text="Item Delivered to Gudang BTS
+Semarang"
                                 android:textColor="@color/black"
                                 android:fontFamily="@font/poppins_semibold"/>
 
@@ -205,7 +206,7 @@
                                 android:fontFamily="@font/poppins"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="PT industri jaya"/>
+                                android:text="Andre Pamungkas"/>
 
 
                             <LinearLayout
@@ -216,6 +217,8 @@
                                     android:layout_width="wrap_content"
                                     android:layout_height="20dp"
                                     android:textSize="10dp"
+                                    android:paddingLeft="10dp"
+                                    android:paddingRight="10dp "
                                     android:fontFamily="@font/poppins"
                                     android:textAllCaps="false"
                                     android:textColor="@color/white"
@@ -263,12 +266,14 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:orientation="vertical">
+
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Item Produced"
-                            android:textColor="@color/black"
-                            android:fontFamily="@font/poppins_semibold"/>
+                            android:fontFamily="@font/poppins_semibold"
+                            android:text="Item Delivered to Gudang KNS
+Solo"
+                            android:textColor="@color/black" />
 
                         <TextView
                             android:textSize="10dp"
@@ -276,7 +281,7 @@
                             android:fontFamily="@font/poppins"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="PT industri jaya"/>
+                            android:text="M Ridwan"/>
 
 
                         <LinearLayout
@@ -287,6 +292,8 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="20dp"
                                 android:textSize="10dp"
+                                android:paddingLeft="10dp"
+                                android:paddingRight="10dp"
                                 android:fontFamily="@font/poppins"
                                 android:textAllCaps="false"
                                 android:textColor="@color/white"

@@ -105,18 +105,19 @@
             android:fontFamily="@font/poppins"
             android:textColor="@color/color1"/>
 
+
         <EditText
             android:id="@+id/signup_et_location"
-            android:textColorHint="@color/hint"
-            android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:hint="Location"
+            android:layout_marginTop="20dp"
             android:background="@drawable/round_edittext"
+            android:editable="false"
             android:fontFamily="@font/poppins"
-            android:textColor="@color/color1"/>
-
+            android:hint="Location"
+            android:padding="15dp"
+            android:textColor="@color/color1"
+            android:textColorHint="@color/hint" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/signup_bt_signup"

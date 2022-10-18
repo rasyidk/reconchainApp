@@ -38,7 +38,7 @@ public class logInActivity extends AppCompatActivity {
                 SharedPreferences valuser = logInActivity.this.getSharedPreferences("valuser", Context.MODE_PRIVATE);
 
                 if (et_username.getText().toString().equals("") || et_password.getText().toString().equals("")){
-                    Toast.makeText(getApplicationContext(),"Fill the Blank!",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(),"field cant be empty!",Toast.LENGTH_LONG).show();
                 }else {
                     String username, password;
                     username = et_username.getText().toString();
@@ -46,6 +46,7 @@ public class logInActivity extends AppCompatActivity {
                     if (username.equals("produsen") && password.equals("123")){
                         Intent i =  new Intent(logInActivity.this, landingActivity.class);
                         startActivity(i);
+                        finish();
 
                         SharedPreferences.Editor editor = valuser.edit();
                         editor.putString("username", username);
@@ -57,6 +58,7 @@ public class logInActivity extends AppCompatActivity {
                     }else if (username.equals("distributor") && password.equals("123")){
                         Intent i =  new Intent(logInActivity.this, landingActivity.class);
                         startActivity(i);
+                        finish();
 
                         SharedPreferences.Editor editor = valuser.edit();
                         editor.putString("username", username);
@@ -66,7 +68,7 @@ public class logInActivity extends AppCompatActivity {
                         editor.apply();
 
                     }else {
-                        Toast.makeText(getApplicationContext(),"Invalid Account!", Toast.LENGTH_LONG).show();
+                        Toast.makeText(getApplicationContext(),"your account is not registered yet!", Toast.LENGTH_LONG).show();
                     }
 
 

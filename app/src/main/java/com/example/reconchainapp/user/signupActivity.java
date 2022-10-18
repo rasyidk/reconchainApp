@@ -13,10 +13,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.reconchainapp.R;
+import com.example.reconchainapp.splashScreenActivity;
 
 public class signupActivity extends AppCompatActivity {
 
     String[] listRole;
+    String strx = "";
+    String x = "";
     EditText et_role,et_company,et_username,et_email,et_password,et_confirmpass,et_location;
     Button bt_signup, bt_login;
     int pos = 0;
@@ -51,8 +54,13 @@ public class signupActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i =  new Intent(signupActivity.this, logInActivity.class);
                 startActivity(i);
+
             }
         });
+
+        Intent intent = getIntent();
+        String str = intent.getStringExtra("addr");
+        et_location.setText(str);
 
         et_company.setVisibility(View.GONE);
         et_role.setOnClickListener(new View.OnClickListener() {
@@ -91,6 +99,14 @@ public class signupActivity extends AppCompatActivity {
                 mDialog.show();
             }
         });
+
+        et_location.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =  new Intent(signupActivity.this, pickLocationActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void bt_signup_act() {
@@ -105,9 +121,9 @@ public class signupActivity extends AppCompatActivity {
                 et_location.getText().toString().equals(""))
         {
 
-            Toast.makeText(getApplicationContext(),"Cant Empty!",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"field cant be empty!",Toast.LENGTH_LONG).show();
         }else{
-            Toast.makeText(getApplicationContext(),"All Filled!",Toast.LENGTH_LONG).show();
+            Toast.makeText(getApplicationContext(),"account has been created succesfully!",Toast.LENGTH_LONG).show();
         }
 
     }

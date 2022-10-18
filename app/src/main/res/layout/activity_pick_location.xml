@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".user.pickLocationActivity">
+
+    <RelativeLayout
+        android:id="@+id/lin_picklocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/white"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/mainmarginn"
+                android:layout_marginLeft="@dimen/mainmarginn"
+                android:layout_marginRight="@dimen/mainmarginn"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_semibold"
+                android:textSize="20dp"
+                android:text="Pick Your Address"/>
+            <TextView
+                android:id="@+id/pl_tv_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/mainmarginn"
+                android:layout_marginRight="@dimen/mainmarginn"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins"
+                android:textSize="15dp"
+                android:text="Your Address........."/>
+
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/pl_bt_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/mainmarginn"
+                android:background="@drawable/round_button"
+                android:textColor="@color/white"
+                android:fontFamily="@font/poppins_semibold"
+                android:text="confirm location"/>
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/lin_picklocation">
+
+        <org.osmdroid.views.MapView android:id="@+id/map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
+</RelativeLayout>

@@ -176,6 +176,16 @@
             android:layout_marginTop="@dimen/mainmarginn"
             android:textSize="16dp"/>
 
+        <TextView
+            android:textColor="@color/textColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Including emissions from : production, material, and packaging"
+
+            android:fontFamily="@font/poppins"
+            android:layout_marginLeft="@dimen/mainmarginn"
+            android:textSize="10dp"/>
+
         <EditText
             android:id="@+id/ip_et_carbonused"
             android:textColor="@color/textColor"
