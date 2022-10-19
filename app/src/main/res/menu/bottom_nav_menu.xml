@@ -2,16 +2,25 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:color="@color/color2"
+        android:tint="@color/color2"
+        android:backgroundTint="@color/color2"
         android:id="@+id/navigation_home"
         android:icon="@drawable/ic_home_black_24dp"
         android:title="@string/title_home" />
 
     <item
+        android:color="@color/color2"
+        android:tint="@color/color2"
+        android:backgroundTint="@color/color2"
         android:id="@+id/navigation_dashboard"
         android:icon="@drawable/ic_baseline_qr_code_24"
         android:title="@string/title_dashboard" />
 
     <item
+        android:color="#FFFFFF"
+        android:tint="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
         android:id="@+id/navigation_notifications"
         android:icon="@drawable/ad_product_1"
         android:title="@string/title_notifications" />

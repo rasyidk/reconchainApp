@@ -40,32 +40,37 @@ public class updateProductActivity extends AppCompatActivity {
         up_et_date =  findViewById(R.id.up_et_date);
         up_et_date.setText(formattedDate);
 
-        final Spinner spinner = (Spinner) findViewById(R.id.coba_spinner);
+
         spinner_status = findViewById(R.id.up_spinner_status);
         spinner_shipping = findViewById(R.id.up_spinner_shipping);
 
-        // Spinner click listener
+        List<String> productList =  new ArrayList<String>();
+        productList.add("Good Quality");
+        productList.add("Product Damaged");
+
+        List<String> shippingList =  new ArrayList<String>();
+        shippingList.add("packed");
+        shippingList.add("shipping");
+        shippingList.add("delivered");
 
 
-        // Spinner Drop down elements
-        List<String> categories = new ArrayList<String>();
-        categories.add("Item 1");
-        categories.add("Item 2");
-        categories.add("Item 3");
-        categories.add("Item 4");
-        categories.add("Item 5");
-        categories.add("Item 6");
 
-        // Creating adapter for spinner
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this, R.layout.spinner_item, categories);
+
+
+
+        ArrayAdapter<String> dataAdapterProduct = new ArrayAdapter<String>(this, R.layout.spinner_item, productList);
 
         // Drop down layout style - list view with radio button
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        dataAdapterProduct.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
-        // attaching data adapter to spinner
-        spinner.setAdapter(dataAdapter);
-        spinner_shipping.setAdapter(dataAdapter);
-        spinner_status.setAdapter(dataAdapter);
+        ArrayAdapter<String> dataAdapterShipping = new ArrayAdapter<String>(this, R.layout.spinner_item, shippingList);
+
+        // Drop down layout style - list view with radio button
+        dataAdapterShipping.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+
+        spinner_shipping.setAdapter(dataAdapterShipping);
+        spinner_status.setAdapter(dataAdapterProduct);
 
     }
 }

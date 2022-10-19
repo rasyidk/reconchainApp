@@ -2,6 +2,7 @@ package com.example.reconchainapp.input;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,11 +10,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.reconchainapp.R;
+import com.example.reconchainapp.navBottomActivity;
+import com.example.reconchainapp.profile.distributorRequestActivity;
 
 public class inputProductActivity extends AppCompatActivity {
 
     EditText et_idproduct,et_productname,et_date,et_location,et_company,et_raw,et_carbon;
-    Button bt_save;
+    Button bt_save, bt_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,13 +32,21 @@ public class inputProductActivity extends AppCompatActivity {
         et_carbon = findViewById(R.id.ip_et_carbonused);
 
         bt_save = findViewById(R.id.ip_bt_save);
+        bt_back = findViewById(R.id.ip_bt_back);
 
+
+        bt_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =  new Intent(inputProductActivity.this, navBottomActivity.class);
+                startActivity(i);
+            }
+        });
         bt_save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                if (et_idproduct.getText().toString().equals("") ||
-                        et_productname.getText().toString().equals("") ||
+                if (et_productname.getText().toString().equals("") ||
                         et_date.getText().toString().equals("") ||
                         et_location.getText().toString().equals("") ||
                         et_company.getText().toString().equals("") ||

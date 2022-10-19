@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -78,6 +78,136 @@
 
 
                 <TextView
+                    android:id="@+id/fr_hm_tv_menu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Menu"
+                    android:layout_margin="@dimen/mainmarginn"
+                    android:textColor="@color/black"
+                    android:fontFamily="@font/poppins_bold"/>
+
+                <LinearLayout
+                    android:id="@+id/fr_hm_lin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/mainmarginn"
+                    android:layout_marginLeft="@dimen/mainmarginn"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+                    <RelativeLayout
+                        android:id="@+id/fr_hm_menu_QR"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/round_menu">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_baseline_qr_code_24"
+                            android:padding="15dp"/>
+                    </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:textSize="10dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:text="Generate QR"
+                                android:layout_centerHorizontal="true"/>
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/fr_hm_menu_dist_req"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/round_menu">
+
+
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_distributor_request"
+                            android:padding="15dp"/>
+                    </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:textSize="10dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:text="Distributor \n Request"
+                                android:layout_centerHorizontal="true"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/fr_hm_menu_dist_list"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/round_menu">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/ic_distributor_list"
+                            android:padding="15dp"/>
+                    </RelativeLayout>
+                        <RelativeLayout
+                            android:layout_marginTop="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:textColor="@color/black"
+                                android:layout_width="wrap_content"
+                                android:textSize="10dp"
+                                android:layout_height="wrap_content"
+                                android:fontFamily="@font/poppins_semibold"
+                                android:text="Distributor \n List"
+                                android:layout_centerHorizontal="true"/>
+                        </RelativeLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Notifications"
@@ -133,9 +263,15 @@
                                 android:fontFamily="@font/poppins"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:text="18 August 2022"/>
+
+                            <TextView
+                                android:textSize="10dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:text="PT industri jaya"/>
-
-
                             <LinearLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -197,8 +333,17 @@
                                 android:layout_height="wrap_content"
                                 android:text="Item Delivered to Gudang BTS
 Semarang"
+                                android:textSize="10dp"
                                 android:textColor="@color/black"
                                 android:fontFamily="@font/poppins_semibold"/>
+
+                            <TextView
+                                android:textSize="10dp"
+                                android:textColor="@color/black"
+                                android:fontFamily="@font/poppins"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="18 August 2022"/>
 
                             <TextView
                                 android:textSize="10dp"
@@ -218,7 +363,7 @@ Semarang"
                                     android:layout_height="20dp"
                                     android:textSize="10dp"
                                     android:paddingLeft="10dp"
-                                    android:paddingRight="10dp "
+                                    android:paddingRight="10dp"
                                     android:fontFamily="@font/poppins"
                                     android:textAllCaps="false"
                                     android:textColor="@color/white"
@@ -236,6 +381,7 @@ Semarang"
                 android:background="@drawable/round_linear"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
+                    android:layout_marginBottom="100dp"
                 android:orientation="horizontal">
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -273,7 +419,18 @@ Semarang"
                             android:fontFamily="@font/poppins_semibold"
                             android:text="Item Delivered to Gudang KNS
 Solo"
+                            android:textSize="10dp"
                             android:textColor="@color/black" />
+
+                        <TextView
+                            android:textSize="10dp"
+                            android:textColor="@color/black"
+                            android:fontFamily="@font/poppins"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="20 August 2022"/>
+
+
 
                         <TextView
                             android:textSize="10dp"
@@ -312,4 +469,4 @@ Solo"
 
 
     </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+</ScrollView>

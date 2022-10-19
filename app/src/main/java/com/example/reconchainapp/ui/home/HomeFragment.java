@@ -8,6 +8,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +18,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.reconchainapp.databinding.FragmentHomeBinding;
+import com.example.reconchainapp.profile.distributorListActivity;
+import com.example.reconchainapp.profile.distributorRequestActivity;
 import com.example.reconchainapp.profile.profileActivity;
 import com.example.reconchainapp.splashScreenActivity;
 
@@ -23,6 +27,9 @@ public class HomeFragment extends Fragment {
 
     private FragmentHomeBinding binding;
     private ImageView imageView;
+
+    TextView tv_menu;
+    LinearLayout lin_menu;
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         HomeViewModel homeViewModel =
@@ -42,8 +49,47 @@ public class HomeFragment extends Fragment {
 
         TextView textView = binding.frHmTvEtname;
         SharedPreferences preferences = this.getActivity().getSharedPreferences("valuser", Context.MODE_PRIVATE);
+        String role = preferences.getString("role","");
         String name = preferences.getString("name","");
         textView.setText(name);
+
+
+        RelativeLayout rel_QR, rel_dist_list, rel_dist_req;
+
+        rel_QR = binding.frHmMenuQR;
+        rel_dist_list = binding.frHmMenuDistList;
+        rel_dist_req =  binding.frHmMenuDistReq;
+
+        tv_menu = binding.frHmTvMenu;
+        lin_menu = binding.frHmLin;
+
+        if (role.equals("distributor")){
+            tv_menu.setVisibility(View.GONE);
+            lin_menu.setVisibility(View.GONE);
+        }
+
+        rel_QR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
+        rel_dist_list.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =  new Intent(getContext(), distributorListActivity.class);
+                startActivity(i);
+            }
+        });
+
+        rel_dist_req.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =  new Intent(getContext(), distributorRequestActivity.class);
+                startActivity(i);
+            }
+        });
 
         return root;
     }

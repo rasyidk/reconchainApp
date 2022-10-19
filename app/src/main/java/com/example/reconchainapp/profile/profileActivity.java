@@ -76,6 +76,9 @@ public class profileActivity extends AppCompatActivity {
         if (role.equals("distributor")){
             todl.setVisibility(View.GONE);
             rel_todr.setVisibility(View.GONE);
+        }else{
+            todl.setVisibility(View.GONE);
+            rel_todr.setVisibility(View.GONE);
         }
 
         rel_logout.setOnClickListener(new View.OnClickListener() {

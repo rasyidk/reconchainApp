@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.reconchainapp.R;
+import com.example.reconchainapp.navBottomActivity;
 import com.example.reconchainapp.splashScreenActivity;
 import com.example.reconchainapp.user.signupActivity;
 
@@ -24,7 +25,7 @@ public class distributorRequestActivity extends AppCompatActivity {
         bt_back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i =  new Intent(distributorRequestActivity.this, profileActivity.class);
+                Intent i =  new Intent(distributorRequestActivity.this, navBottomActivity.class);
                 startActivity(i);
             }
         });
