@@ -58,7 +58,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Le Minearal"
+                android:text="Le Mineral"
                 android:textSize="12dp"
                 android:textColor="@color/white"
                 android:layout_marginLeft="@dimen/mainmarginn"

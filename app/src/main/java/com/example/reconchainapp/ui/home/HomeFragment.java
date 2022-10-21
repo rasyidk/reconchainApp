@@ -3,6 +3,7 @@ package com.example.reconchainapp.ui.home;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -71,7 +72,8 @@ public class HomeFragment extends Fragment {
         rel_QR.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Uri uri = Uri.parse("https://reconchain.vercel.app/dashboard");
+                startActivity(new Intent(Intent.ACTION_VIEW, uri));
             }
         });
 

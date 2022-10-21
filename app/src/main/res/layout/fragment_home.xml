@@ -284,7 +284,7 @@
                                     android:textAllCaps="false"
                                     android:textColor="@color/white"
                                     android:background="@drawable/round_button_green"
-                                    android:text="Goofd Quality"/>
+                                    android:text="Good Quality"/>
 
                             </LinearLayout>
                         </LinearLayout>

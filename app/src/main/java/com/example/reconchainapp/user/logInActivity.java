@@ -6,7 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -18,6 +20,16 @@ public class logInActivity extends AppCompatActivity {
 
     EditText et_username, et_password;
     Button bt_login,bt_signup;
+
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.
+                INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        return true;
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,7 +37,6 @@ public class logInActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
 
-        //Init
         et_password = findViewById(R.id.login_et_password);
         et_username = findViewById(R.id.login_et_username);
         bt_login = findViewById(R.id.login_bt_login);
@@ -80,8 +91,11 @@ public class logInActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i =  new Intent(logInActivity.this, signupActivity.class);
+                i.putExtra("role", "");
                 startActivity(i);
             }
         });
     }
+
+
 }

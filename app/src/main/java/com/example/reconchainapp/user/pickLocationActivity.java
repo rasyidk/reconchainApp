@@ -72,7 +72,17 @@ public class pickLocationActivity extends AppCompatActivity {
         map.setMultiTouchControls(true);
 
 
-        Overlay touchOverlay = new Overlay(this){
+        Intent intent = getIntent();
+        String addr = intent.getStringExtra("addr");
+        String username = intent.getStringExtra("username");
+        String email = intent.getStringExtra("email");
+        String password = intent.getStringExtra("password");
+        String confirmPassword = intent.getStringExtra("confirmPassword");
+        String role = intent.getStringExtra("role");
+        String company = intent.getStringExtra("company");
+        String name = intent.getStringExtra("name");
+
+            Overlay touchOverlay = new Overlay(this){
             ItemizedIconOverlay<OverlayItem> anotherItemizedIconOverlay = null;
 
             @Override
@@ -116,9 +126,19 @@ public class pickLocationActivity extends AppCompatActivity {
                 if (saddress.equals("")){
                     Toast.makeText(getApplicationContext(), "Please pick your location!", Toast.LENGTH_SHORT).show();
                 }else {
-                    Intent intent = new Intent(getApplicationContext(), signupActivity.class);
-                    intent.putExtra("addr", saddress);
-                    startActivity(intent);
+                    Intent i =  new Intent(pickLocationActivity.this, signupActivity.class);
+
+                    i.putExtra("name", name);
+                    i.putExtra("username", username);
+                    i.putExtra("email", email);
+                    i.putExtra("username", username);
+                    i.putExtra("password", password);
+                    i.putExtra("confirmPassword", confirmPassword);
+                    i.putExtra("addr", saddress);
+                    i.putExtra("role", role);
+                    i.putExtra("company", company);
+                    startActivity(i);
+                    finish();
                 }
             }
         });

@@ -7,6 +7,7 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -22,7 +23,7 @@ import com.example.reconchainapp.user.logInActivity;
 
 public class profileActivity extends AppCompatActivity {
 
-    RelativeLayout todl,rel_logout, rel_todr;
+    RelativeLayout todl,rel_logout, rel_todr, rel_term,rel_help;
     TextView tv_name, tv_id,tv_role;
     Button pr_btback;
     @Override
@@ -41,6 +42,8 @@ public class profileActivity extends AppCompatActivity {
         todl = findViewById(R.id.pr_rel_todl);
         rel_todr = findViewById(R.id.pr_rel_todr);
         rel_logout = findViewById(R.id.pr_rel_logout);
+        rel_help =  findViewById(R.id.pr_rel_help);
+        rel_term = findViewById(R.id.pr_rel_term);
 
         tv_name =  findViewById(R.id.pr_tv_nama);
         tv_id = findViewById(R.id.pr_tv_id);
@@ -70,6 +73,22 @@ public class profileActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i =  new Intent(profileActivity.this, distributorRequestActivity.class);
                 startActivity(i);
+            }
+        });
+
+        rel_term.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse("https://reconchain.vercel.app/terms");
+                startActivity(new Intent(Intent.ACTION_VIEW, uri));
+            }
+        });
+
+        rel_help.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Uri uri = Uri.parse("https://reconchain.vercel.app/helpcenter");
+                startActivity(new Intent(Intent.ACTION_VIEW, uri));
             }
         });
 

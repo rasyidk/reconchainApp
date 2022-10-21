@@ -25,12 +25,16 @@ public class updateProductActivity extends AppCompatActivity {
 
     EditText up_et_date;
     Spinner spinner_status, spinner_shipping;
+    Button bt_save;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update_product);
 
         getSupportActionBar().hide();
+
+        bt_save= findViewById(R.id.up_bt_save);
+
         Date c = Calendar.getInstance().getTime();
         System.out.println("Current time => " + c);
 
@@ -72,5 +76,12 @@ public class updateProductActivity extends AppCompatActivity {
         spinner_shipping.setAdapter(dataAdapterShipping);
         spinner_status.setAdapter(dataAdapterProduct);
 
+
+        bt_save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(),"Saved!", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }

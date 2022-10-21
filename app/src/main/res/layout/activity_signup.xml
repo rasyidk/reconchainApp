@@ -27,18 +27,31 @@
 
 
         <EditText
-            android:id="@+id/signup_et_username"
+            android:id="@+id/signup_et_name"
             android:layout_marginTop="40dp"
             android:textColorHint="@color/hint"
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="15dp"
-            android:hint="Username"
+            android:hint="Name"
             android:background="@drawable/round_edittext"
             android:fontFamily="@font/poppins"
             android:textColor="@color/color1"
             />
+
+        <EditText
+            android:id="@+id/signup_et_username"
+            android:textColorHint="@color/hint"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp"
+            android:hint="Username"
+            android:background="@drawable/round_edittext"
+            android:fontFamily="@font/poppins"
+            android:textColor="@color/color1"/>
+
 
         <EditText
             android:id="@+id/signup_et_email"
