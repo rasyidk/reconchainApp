@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color1"
+    tools:context=".profile.editProfileActivity">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/mainmarginn"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ep_btback"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="@dimen/mainmarginn"
+
+            android:background="@drawable/ic_baseline_arrow_back_24_white"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:layout_width="170dp"
+                android:layout_centerHorizontal="true"
+                android:layout_height="170dp"
+                android:background="@drawable/ic_baseline_account_circle_24" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+               android:layout_height="wrap_content"
+                android:text="Change Photo"
+                android:textColor="@color/color2"
+                android:fontFamily="@font/poppins_semibold"
+                android:layout_marginTop="@dimen/mainmarginn"
+
+                />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_marginTop="@dimen/mainmarginn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/ep_et_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:background="@drawable/round_edittext_white"
+            android:textColorHint="@color/hint"/>
+        <TextView
+           android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Password"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/ep_et_newpassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:inputType="textPassword"
+            android:textColor="@color/black"
+            android:background="@drawable/round_edittext_white"
+            android:textColorHint="@color/hint"/>
+        <TextView
+            android:id="@+id/ep_tv_company"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Company"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/ep_et_company"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:background="@drawable/round_edittext_white"
+            android:textColorHint="@color/hint"/>
+
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Location"
+            android:fontFamily="@font/poppins_semibold"
+            android:textColor="@color/white"/>
+
+        <EditText
+            android:id="@+id/ep_et_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:background="@drawable/round_edittext_white"
+            android:textColorHint="@color/hint"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ep_bt_save"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Save"
+            android:textSize="20dp"
+            android:fontFamily="@font/poppins_bold"
+            android:background="@drawable/round_rel_button"
+            android:textAllCaps="false"
+
+            android:layout_marginBottom="100dp"
+            android:layout_marginTop="40dp"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.core.widget.NestedScrollView>

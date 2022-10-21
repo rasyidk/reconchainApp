@@ -23,7 +23,7 @@ import com.example.reconchainapp.user.logInActivity;
 
 public class profileActivity extends AppCompatActivity {
 
-    RelativeLayout todl,rel_logout, rel_todr, rel_term,rel_help;
+    RelativeLayout todl,rel_logout, rel_todr, rel_term,rel_help, rel_edit;
     TextView tv_name, tv_id,tv_role;
     Button pr_btback;
     @Override
@@ -44,6 +44,7 @@ public class profileActivity extends AppCompatActivity {
         rel_logout = findViewById(R.id.pr_rel_logout);
         rel_help =  findViewById(R.id.pr_rel_help);
         rel_term = findViewById(R.id.pr_rel_term);
+        rel_edit = findViewById(R.id.pr_rel_edit);
 
         tv_name =  findViewById(R.id.pr_tv_nama);
         tv_id = findViewById(R.id.pr_tv_id);
@@ -64,6 +65,13 @@ public class profileActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i =  new Intent(profileActivity.this, distributorListActivity.class);
+                startActivity(i);
+            }
+        });
+        rel_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i =  new Intent(profileActivity.this, editProfileActivity.class);
                 startActivity(i);
             }
         });

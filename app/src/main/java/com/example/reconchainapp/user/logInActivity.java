@@ -63,6 +63,9 @@ public class logInActivity extends AppCompatActivity {
                         editor.putString("username", username);
                         editor.putString("name", "pudyasta");
                         editor.putString("role", "produsen");
+                        editor.putString("addr", "Jl. Persatuan, Bulaksumur, Sleman, Yogyakarta");
+                        editor.putString("password","123");
+                        editor.putString("company","PT Maju Indonesia");
                         editor.putString("id", "12122SSSS");
                         editor.apply();
 
@@ -74,8 +77,10 @@ public class logInActivity extends AppCompatActivity {
                         SharedPreferences.Editor editor = valuser.edit();
                         editor.putString("username", username);
                         editor.putString("name", "rasyidk");
+                        editor.putString("password","12345678");
+                        editor.putString("addr", "Jl. Damai, Baki, Sukoharjo");
                         editor.putString("role", "distributor");
-                        editor.putString("id", "688aaaaa");
+                        editor.putString("id", "688AA8800");
                         editor.apply();
 
                     }else {

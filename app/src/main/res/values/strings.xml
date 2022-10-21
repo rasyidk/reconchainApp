@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">reconchainApp</string>
+    <string name="app_name">Recon Chain</string>
     <string name="title_activity_nav_bottom">navBottomActivity</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
