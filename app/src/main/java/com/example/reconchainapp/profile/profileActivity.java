@@ -31,7 +31,7 @@ public class profileActivity extends AppCompatActivity {
         SharedPreferences preferences = profileActivity.this.getSharedPreferences("sharedPreferencesUser", Context.MODE_PRIVATE);
         String name = preferences.getString("name","");
         String role = preferences.getString("role","");
-        String id = preferences.getString("id","");
+        String id = preferences.getString("companycode","");
         getSupportActionBar().hide();
 
 

@@ -1,4 +1,4 @@
-package com.example.reconchainapp.user;
+package com.example.reconchainapp.user.signUp;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -16,7 +17,19 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.reconchainapp.R;
+import com.example.reconchainapp.api.retrofitapi;
+import com.example.reconchainapp.landingActivity;
 import com.example.reconchainapp.user.login.logInActivity;
+import com.example.reconchainapp.user.login.loginInterface;
+import com.example.reconchainapp.user.pickLocationActivity;
+
+import java.util.HashMap;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class signupActivity extends AppCompatActivity {
 
@@ -25,6 +38,7 @@ public class signupActivity extends AppCompatActivity {
     String x = "";
     EditText et_role,et_company,et_username,et_email,et_password,et_confirmpass,et_location,et_name;
     Button bt_signup, bt_login;
+    String slong,slat;
     int pos = 0;
 
     @Override
@@ -81,6 +95,8 @@ public class signupActivity extends AppCompatActivity {
         String role = intent.getStringExtra("role");
         String company = intent.getStringExtra("company");
         String name = intent.getStringExtra("name");
+        slong =  intent.getStringExtra("longitude");
+        slat = intent.getStringExtra("latitude");
 
         et_location.setText(addr);
         et_username.setText(username);
@@ -123,7 +139,7 @@ public class signupActivity extends AppCompatActivity {
         et_role.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                listRole = new String[]{"Produsen","Distributor"};
+                listRole = new String[]{"producer","distributor"};
                 AlertDialog.Builder mBuilder = new AlertDialog.Builder(signupActivity.this);
                 mBuilder.setTitle("Choose Role");
 
@@ -180,20 +196,141 @@ public class signupActivity extends AppCompatActivity {
     private void bt_signup_act() {
 
         if (
-                et_name.getText().toString().equals("") ||
-                et_username.getText().toString().equals("") ||
-                et_email.getText().toString().equals("") ||
-                et_password.getText().toString().equals("") ||
-                et_confirmpass.getText().toString().equals("") ||
-                et_company.getText().toString().equals("") ||
-                et_role.getText().toString().equals("")||
-                et_location.getText().toString().equals(""))
+//                et_name.getText().toString().equals("") ||
+//                et_username.getText().toString().equals("") ||
+                et_email.getText().toString().equals("")
+//                et_password.getText().toString().equals("") ||
+//                et_confirmpass.getText().toString().equals("") ||
+//                et_company.getText().toString().equals("") ||
+//                et_role.getText().toString().equals("")||
+//                et_location.getText().toString().equals("")
+              )
         {
 
             Toast.makeText(getApplicationContext(),"field cant be empty!",Toast.LENGTH_LONG).show();
         }else{
-            Toast.makeText(getApplicationContext(),"account has been created succesfully!",Toast.LENGTH_LONG).show();
+            signUp();
+//            Toast.makeText(getApplicationContext(),"account has been created succesfully!",Toast.LENGTH_LONG).show();
         }
 
     }
+
+    private void signUp() {
+
+        String name,username,email,password,confirmpass,company, role,location, longitude, latitude;
+
+
+        name = et_name.getText().toString();
+        username =  et_username.getText().toString();
+        email = et_email.getText().toString();
+        password = et_password.getText().toString();
+        confirmpass = et_confirmpass.getText().toString();
+        company = et_company.getText().toString();
+        role = et_role.getText().toString();
+        location = et_location.getText().toString();
+
+        role = role.toLowerCase();
+
+        Log.d("email validator", String.valueOf(emailValidator(email)));
+        Log.d("rolex", role);
+
+        if (emailValidator(email) ==  false){
+            Toast.makeText(getApplicationContext(),"invalid email!", Toast.LENGTH_SHORT).show();
+        }else{
+            if (password.equals(confirmpass)){
+                signUpAction(name,username,email,password,confirmpass,company,role,location);
+            }else {
+                Toast.makeText(getApplicationContext(),"Password doesnt match!", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void signUpAction(String name, String username, String email, String password, String confirmpass, String company, String role, String location) {
+
+        SharedPreferences sharedPreferencesLogin = signupActivity.this.getSharedPreferences("sharedPreferencesLogin", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editorLogin = sharedPreferencesLogin.edit();
+
+        SharedPreferences sharedPreferencesUser = signupActivity.this.getSharedPreferences("sharedPreferencesUser", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editorUser = sharedPreferencesUser.edit();
+
+        signUpInterface api = retrofitapi.getClient(getApplicationContext()).create(signUpInterface.class);
+        HashMap<String,String> hashMap=new HashMap<>();
+        hashMap.put("name",name);
+        hashMap.put("username",username);
+        hashMap.put("email",email);
+        hashMap.put("password",password);
+        hashMap.put("role",role);
+        hashMap.put("company",company);
+        hashMap.put("location",location);
+        hashMap.put("longitude",slong);
+        hashMap.put("latitude",slat);
+
+        try{
+
+            Call<signUpResponse> call = api.signUp(hashMap);
+            call.enqueue(new Callback<signUpResponse>() {
+                @Override
+                public void onResponse(Call<signUpResponse> call, Response<signUpResponse> response) {
+                    if (response.code() == 200){
+
+                        Integer status = response.body().getUser().getStatus();
+
+                        if (status == 0){
+                            Toast.makeText(getApplicationContext(),"account will be validated by producer!", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(getApplicationContext(), "account has been created!", Toast.LENGTH_SHORT).show();
+
+
+                            //LOGIN SHARED PREF
+                            editorLogin.putString("login", "yes");
+                            editorLogin.apply();
+
+                            //USER SHARED PREF
+                            editorUser.putString("token", response.body().getToken());
+                            editorUser.putString("name", response.body().getUser().getName());
+                            editorUser.putString("username", response.body().getUser().getUsername());
+                            editorUser.putString("password",response.body().getUser().getPassword());
+                            editorUser.putString("email",response.body().getUser().getEmail());
+                            editorUser.putString("role", response.body().getUser().getRole());
+                            editorUser.putString("company", response.body().getUser().getCompany());
+                            editorUser.putString("companycode", response.body().getUser().getCompanycode());
+                            editorUser.putString("location", response.body().getUser().getLocation());
+                            editorUser.putString("longitude", response.body().getUser().getLongitude());
+                            editorUser.putString("latitude", response.body().getUser().getLatitude());
+                            editorUser.putString("id", "688AA8800");
+                            editorUser.apply();
+
+
+                            Intent i =  new Intent(signupActivity.this, landingActivity.class);
+                            startActivity(i);
+                            finish();
+                        }
+
+
+                    }else {
+                        Toast.makeText(getApplicationContext(),"failed to make account!", Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<signUpResponse> call, Throwable t) {
+
+                }
+            });
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+        }
+
+    }
+
+    public boolean emailValidator(String email)
+    {
+        Pattern pattern;
+        Matcher matcher;
+        final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
+        pattern = Pattern.compile(EMAIL_PATTERN);
+        matcher = pattern.matcher(email);
+        return matcher.matches();
+    }
+
 }

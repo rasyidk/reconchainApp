@@ -17,7 +17,7 @@ import android.widget.Toast;
 import com.example.reconchainapp.R;
 import com.example.reconchainapp.api.retrofitapi;
 import com.example.reconchainapp.landingActivity;
-import com.example.reconchainapp.user.signupActivity;
+import com.example.reconchainapp.user.signUp.signupActivity;
 
 import java.util.HashMap;
 
@@ -158,9 +158,10 @@ public class logInActivity extends AppCompatActivity {
                         Log.d("email", response.body().getUser().getEmail());
                         Log.d("role", response.body().getUser().getRole());
                         Log.d("company", response.body().getUser().getCompany());
+                        Log.d("companycode", response.body().getUser().getCompanycode());
                         Log.d("location", response.body().getUser().getLocation());
-//                        Log.d("longitude", response.body().getUser().getLongitude());
-//                        Log.d("latitude", response.body().getUser().getLatitude());
+                        Log.d("longitude", response.body().getUser().getLongitude());
+                        Log.d("latitude", response.body().getUser().getLatitude());
 
                         Intent i =  new Intent(logInActivity.this, landingActivity.class);
                         startActivity(i);

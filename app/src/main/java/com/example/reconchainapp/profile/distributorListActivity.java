@@ -9,8 +9,6 @@ import android.widget.Button;
 
 import com.example.reconchainapp.R;
 import com.example.reconchainapp.navBottomActivity;
-import com.example.reconchainapp.splashScreenActivity;
-import com.example.reconchainapp.user.signupActivity;
 
 public class distributorListActivity extends AppCompatActivity {
 

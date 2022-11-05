@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.reconchainapp.R;
+import com.example.reconchainapp.user.signUp.signupActivity;
 
 import org.osmdroid.api.IMapController;
 import org.osmdroid.config.Configuration;
@@ -137,6 +138,8 @@ public class pickLocationActivity extends AppCompatActivity {
                     i.putExtra("addr", saddress);
                     i.putExtra("role", role);
                     i.putExtra("company", company);
+                    i.putExtra("longitude", slong);
+                    i.putExtra("latitude", slat);
                     startActivity(i);
                     finish();
                 }

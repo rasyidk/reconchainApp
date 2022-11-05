@@ -1,11 +1,9 @@
-package com.example.reconchainapp.user.login;
+package com.example.reconchainapp.user.signUp;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.List;
-
-public class loginAdapter {
+public class signUpAdapter {
 
     @SerializedName("name")
     @Expose
@@ -46,6 +44,10 @@ public class loginAdapter {
     @SerializedName("latitude")
     @Expose
     private String latitude;
+
+    @SerializedName("status")
+    @Expose
+    private Integer status;
 
 
     public String getName() {
@@ -126,5 +128,13 @@ public class loginAdapter {
 
     public void setLatitude(String latitude) {
         this.latitude = latitude;
+    }
+
+    public Integer getStatus() {
+        return status;
+    }
+
+    public void setStatus(Integer status) {
+        this.status = status;
     }
 }
