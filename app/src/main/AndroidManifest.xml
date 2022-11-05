@@ -15,6 +15,7 @@
 
     <application
         android:allowBackup="true"
+        android:hardwareAccelerated="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/logo_launcher_round"
@@ -102,7 +103,7 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".user.logInActivity"
+            android:name=".user.login.logInActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

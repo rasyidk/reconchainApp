@@ -16,7 +16,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.reconchainapp.R;
-import com.example.reconchainapp.splashScreenActivity;
+import com.example.reconchainapp.user.login.logInActivity;
 
 public class signupActivity extends AppCompatActivity {
 

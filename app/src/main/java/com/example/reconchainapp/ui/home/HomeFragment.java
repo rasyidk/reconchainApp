@@ -49,7 +49,7 @@ public class HomeFragment extends Fragment {
         });
 
         TextView textView = binding.frHmTvEtname;
-        SharedPreferences preferences = this.getActivity().getSharedPreferences("valuser", Context.MODE_PRIVATE);
+        SharedPreferences preferences = this.getActivity().getSharedPreferences("sharedPreferencesUser", Context.MODE_PRIVATE);
         String role = preferences.getString("role","");
         String name = preferences.getString("name","");
         textView.setText(name);

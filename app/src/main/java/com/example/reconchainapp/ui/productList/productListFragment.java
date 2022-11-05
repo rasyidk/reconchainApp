@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -14,9 +13,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 
 import com.example.reconchainapp.databinding.FragmentProductlistBinding;
-import com.example.reconchainapp.splashScreenActivity;
 import com.example.reconchainapp.trackingProductActivity;
-import com.example.reconchainapp.user.logInActivity;
 
 public class productListFragment extends Fragment {
 

@@ -13,13 +13,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.reconchainapp.R;
-import com.example.reconchainapp.input.inputProductActivity;
 import com.example.reconchainapp.navBottomActivity;
-import com.example.reconchainapp.splashScreenActivity;
-import com.example.reconchainapp.user.logInActivity;
+import com.example.reconchainapp.user.login.logInActivity;
 
 public class profileActivity extends AppCompatActivity {
 
@@ -31,7 +28,7 @@ public class profileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        SharedPreferences preferences = profileActivity.this.getSharedPreferences("valuser", Context.MODE_PRIVATE);
+        SharedPreferences preferences = profileActivity.this.getSharedPreferences("sharedPreferencesUser", Context.MODE_PRIVATE);
         String name = preferences.getString("name","");
         String role = preferences.getString("role","");
         String id = preferences.getString("id","");
@@ -118,12 +115,35 @@ public class profileActivity extends AppCompatActivity {
     }
 
     private void logout() {
+        SharedPreferences sharedPreferencesLogin = profileActivity.this.getSharedPreferences("sharedPreferencesLogin", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editorLogin = sharedPreferencesLogin.edit();
+
+        SharedPreferences sharedPreferencesUser = profileActivity.this.getSharedPreferences("sharedPreferencesUser", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editorUser = sharedPreferencesUser.edit();
 
         DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 switch (which){
                     case DialogInterface.BUTTON_POSITIVE:
+
+                        editorLogin.putString("login", "no");
+                        editorLogin.apply();
+
+                        //USER SHARED PREF
+                        editorUser.putString("token", "");
+                        editorUser.putString("name", "");
+                        editorUser.putString("username", "");
+                        editorUser.putString("password","");
+                        editorUser.putString("email","");
+                        editorUser.putString("role", "");
+                        editorUser.putString("company", "");
+                        editorUser.putString("location", "");
+//                        editorUser.putString("longitude", response.body().getUser().getLongitude());
+//                        editorUser.putString("latitude", response.body().getUser().getLatitude());
+                        editorUser.putString("id", "");
+                        editorUser.apply();
+
                         Intent i =  new Intent(profileActivity.this, logInActivity.class);
                         startActivity(i);
                         finish();
