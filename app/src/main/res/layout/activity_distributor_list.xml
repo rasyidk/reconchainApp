@@ -6,13 +6,13 @@
     android:layout_height="match_parent"
     android:background="@color/bgwhite"
     android:orientation="vertical"
-    tools:context=".profile.distributorListActivity">
+    tools:context=".ui.home.DL.distributorListActivity">
 
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/dl_bt_back"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
         android:layout_marginTop="@dimen/mainmarginn"
         android:layout_marginLeft="@dimen/mainmarginn"
         android:background="@drawable/ic_baseline_arrow_back_24"/>
@@ -45,145 +45,49 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
 
-    <LinearLayout
-        android:layout_marginTop="@dimen/mainmarginn"
+
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="@dimen/mainmarginn"
+        tools:context=".DL.distributorListActivity">
 
-        android:elevation="10dp"
-        android:orientation="vertical">
-
-        <LinearLayout
+        <FrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginLeft="@dimen/mainmarginn"
-            android:layout_marginRight="@dimen/mainmarginn"
-            android:background="@drawable/round_linear"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            >
 
-            <RelativeLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent">
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/ic_baseline_account_circle_black_24" />
-            </RelativeLayout>
-
-            <RelativeLayout
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/dl_main_recycler"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/mainmarginn"
-                    android:layout_marginRight="@dimen/mainmarginn"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:text="Zainudin"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Maluku Area"
-                        android:textColor="@color/black"
-                        android:textSize="10dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins"
-                        android:text="Maluku Tengah, Kep Maluku"
-                        android:textColor="@color/black"
-                        android:textSize="10dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:text="Last Delivery on 17 8 2022"
-                        android:textColor="@color/black"
-                        android:textSize="10dp" />
-                </LinearLayout>
-            </RelativeLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginLeft="@dimen/mainmarginn"
-            android:layout_marginTop="@dimen/mainmarginn"
-            android:layout_marginRight="@dimen/mainmarginn"
-            android:background="@drawable/round_linear"
-            android:orientation="horizontal">
-
-            <RelativeLayout
+            <ProgressBar
+                android:id="@+id/dl_main_progress"
                 android:layout_width="wrap_content"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"/>
 
-                <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
-                    android:src="@drawable/ic_baseline_account_circle_black_24" />
-            </RelativeLayout>
+            <TextView
+                android:id="@+id/dl_tv_emptydata"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Empty Data"
+                android:layout_gravity="center"/>
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="@dimen/mainmarginn"
-                    android:layout_marginRight="@dimen/mainmarginn"
-                    android:orientation="vertical">
+            <include layout="@layout/error_layout"/>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:text="Ammar"
-                        android:textColor="@color/black" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Yogyakarta Area"
-                        android:textColor="@color/black"
-                        android:textSize="10dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins"
-                        android:text="Cibinong Kab. Bogor"
-                        android:textColor="@color/black"
-                        android:textSize="10dp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins_semibold"
-                        android:text="Last Delivery on 17 8 2022"
-                        android:textColor="@color/black"
-                        android:textSize="10dp" />
-                </LinearLayout>
-            </RelativeLayout>
-        </LinearLayout>
+        </FrameLayout>
 
     </LinearLayout>
-
 </LinearLayout>

@@ -11,7 +11,6 @@ import android.widget.Toast;
 
 import com.example.reconchainapp.R;
 import com.example.reconchainapp.navBottomActivity;
-import com.example.reconchainapp.profile.distributorRequestActivity;
 
 public class inputProductActivity extends AppCompatActivity {
 

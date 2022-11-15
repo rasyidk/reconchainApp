@@ -131,6 +131,8 @@ public class logInActivity extends AppCompatActivity {
                 public void onResponse(Call<loginResponse> call, Response<loginResponse> response) {
 
                     if (response.code() == 200){
+
+
                         Toast.makeText(getApplicationContext(), "Successfuly Login!", Toast.LENGTH_SHORT).show();
 
                         //LOGIN SHARED PREF
@@ -167,14 +169,18 @@ public class logInActivity extends AppCompatActivity {
                         startActivity(i);
                         finish();
 
-                    }else {
+                    }else if( response.code() == 802){
+                        Toast.makeText(getApplicationContext(), "Your account is not verified yet!", Toast.LENGTH_SHORT).show();
+                    }
+
+                    else {
                         Toast.makeText(getApplicationContext(), "Invalid Account!", Toast.LENGTH_SHORT).show();
                     }
                 }
 
                 @Override
                 public void onFailure(Call<loginResponse> call, Throwable t) {
-
+                    Toast.makeText(getApplicationContext(), t.getLocalizedMessage().toString(), Toast.LENGTH_SHORT).show();
                 }
             });
 

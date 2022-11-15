@@ -196,14 +196,14 @@ public class signupActivity extends AppCompatActivity {
     private void bt_signup_act() {
 
         if (
-//                et_name.getText().toString().equals("") ||
-//                et_username.getText().toString().equals("") ||
-                et_email.getText().toString().equals("")
-//                et_password.getText().toString().equals("") ||
-//                et_confirmpass.getText().toString().equals("") ||
-//                et_company.getText().toString().equals("") ||
-//                et_role.getText().toString().equals("")||
-//                et_location.getText().toString().equals("")
+                et_name.getText().toString().equals("") ||
+                et_username.getText().toString().equals("") ||
+                et_email.getText().toString().equals("") ||
+                et_password.getText().toString().equals("") ||
+                et_confirmpass.getText().toString().equals("") ||
+                et_company.getText().toString().equals("") ||
+                et_role.getText().toString().equals("")||
+                et_location.getText().toString().equals("")
               )
         {
 
@@ -237,10 +237,14 @@ public class signupActivity extends AppCompatActivity {
         if (emailValidator(email) ==  false){
             Toast.makeText(getApplicationContext(),"invalid email!", Toast.LENGTH_SHORT).show();
         }else{
+            if (et_email.getText().toString().length() < 8) {
+                Toast.makeText(getApplicationContext(), "Password minimum 8 character!", Toast.LENGTH_SHORT).show();
+            }else {
             if (password.equals(confirmpass)){
                 signUpAction(name,username,email,password,confirmpass,company,role,location);
             }else {
                 Toast.makeText(getApplicationContext(),"Password doesnt match!", Toast.LENGTH_SHORT).show();
+            }
             }
         }
     }
@@ -260,7 +264,11 @@ public class signupActivity extends AppCompatActivity {
         hashMap.put("email",email);
         hashMap.put("password",password);
         hashMap.put("role",role);
-        hashMap.put("company",company);
+        if (role.equals("distributor")){
+            hashMap.put("company_code",company);
+        }else{
+            hashMap.put("company",company);
+        }
         hashMap.put("location",location);
         hashMap.put("longitude",slong);
         hashMap.put("latitude",slat);
@@ -275,8 +283,10 @@ public class signupActivity extends AppCompatActivity {
 
                         Integer status = response.body().getUser().getStatus();
 
+
                         if (status == 0){
                             Toast.makeText(getApplicationContext(),"account will be validated by producer!", Toast.LENGTH_SHORT).show();
+
                         }else {
                             Toast.makeText(getApplicationContext(), "account has been created!", Toast.LENGTH_SHORT).show();
 

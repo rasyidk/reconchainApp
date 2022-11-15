@@ -68,14 +68,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".profile.distributorRequestActivity"
+            android:name=".ui.home.DR.distributorRequestActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".profile.distributorListActivity"
+            android:name=".ui.home.DL.distributorListActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"

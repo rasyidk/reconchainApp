@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import com.example.reconchainapp.R;
 import com.example.reconchainapp.navBottomActivity;
+import com.example.reconchainapp.ui.home.DL.distributorListActivity;
+import com.example.reconchainapp.ui.home.DR.distributorRequestActivity;
 import com.example.reconchainapp.user.login.logInActivity;
 
 public class profileActivity extends AppCompatActivity {

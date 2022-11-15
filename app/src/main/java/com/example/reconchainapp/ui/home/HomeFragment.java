@@ -12,17 +12,15 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.reconchainapp.databinding.FragmentHomeBinding;
-import com.example.reconchainapp.profile.distributorListActivity;
-import com.example.reconchainapp.profile.distributorRequestActivity;
+import com.example.reconchainapp.ui.home.DL.distributorListActivity;
+import com.example.reconchainapp.ui.home.DR.distributorRequestActivity;
 import com.example.reconchainapp.profile.profileActivity;
-import com.example.reconchainapp.splashScreenActivity;
 
 public class HomeFragment extends Fragment {
 
