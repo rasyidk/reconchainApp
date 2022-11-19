@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.core.app.ActivityCompat;
@@ -53,17 +54,38 @@ public class scanQRFragment extends Fragment {
 
                         String res = result.getText();
 
-                        SharedPreferences preferences = getActivity().getSharedPreferences("valuser", Context.MODE_PRIVATE);
+
+                        SharedPreferences preferences = getActivity().getSharedPreferences("sharedPreferencesUser", Context.MODE_PRIVATE);
                         String role = preferences.getString("role","");
 //                        Toast.makeText(getContext(),role,Toast.LENGTH_LONG).show();
 
-                        if (role.equals("produsen")){
-                            Intent i =  new Intent(getContext(), inputProductActivity.class);
-                            startActivity(i);
-                        }else if (role.equals("distributor")){
-                            Intent i =  new Intent(getContext(), updateProductActivity.class);
-                            startActivity(i);
+
+//                        String link  = "https://reconchain.vercel.app/track/RCNd872258l8lw";
+                        String searchForThis = "https://reconchain.vercel.app/track/";
+                        boolean con =res.toUpperCase().contains(searchForThis.toUpperCase());
+
+                        if (con == true){
+                            System.out.println("Search1="+ con);
+                            res = res.replaceAll("https://reconchain.vercel.app/track/","");
+                            System.out.println("cek="+ res);
+
+                            Toast.makeText(getContext(), res, Toast.LENGTH_SHORT).show();
+                            if (role.equals("produsen") || role.equals("producer")){
+                                Intent i =  new Intent(getContext(), inputProductActivity.class);
+                                i.putExtra("qr",res);
+                                startActivity(i);
+                            }else if (role.equals("distributor")){
+                                Intent i =  new Intent(getContext(), updateProductActivity.class);
+                                i.putExtra("qr",res);
+                                startActivity(i);
+                            }
+
+                        }else {
+                            Toast.makeText(getContext(),"invalid QR Code!", Toast.LENGTH_SHORT).show();
                         }
+
+
+
                     }
                 });
             }

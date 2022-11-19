@@ -53,7 +53,7 @@ public class retrofitapi {
     public static retrofit2.Retrofit getClient(Context context) {
         if (retrofit == null) {
             retrofit = new retrofit2.Retrofit.Builder()
-
+                    .client(buildClient(context))
                     .addConverterFactory(GsonConverterFactory.create())
                     .baseUrl("https://reconchain.herokuapp.com/")
                     .build();

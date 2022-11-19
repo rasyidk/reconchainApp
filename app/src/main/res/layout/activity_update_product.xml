@@ -43,6 +43,7 @@
         android:textSize="16dp"/>
 
     <EditText
+        android:id="@+id/up_et_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="IDX8881778"
@@ -64,6 +65,7 @@
             android:textSize="16dp"/>
 
         <EditText
+            android:id="@+id/up_et_carbon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="23"
@@ -167,6 +169,7 @@
             android:textSize="16dp"/>
 
         <EditText
+            android:id="@+id/up_et_note"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="@dimen/mainmarginn"

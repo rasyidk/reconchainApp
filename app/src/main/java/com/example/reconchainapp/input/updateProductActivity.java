@@ -2,6 +2,8 @@ package com.example.reconchainapp.input;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -12,20 +14,27 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.reconchainapp.R;
+import com.example.reconchainapp.api.retrofitapi;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class updateProductActivity extends AppCompatActivity {
 
 
-    EditText up_et_date;
+    EditText up_et_date,up_et_id,up_et_note,up_et_carbon;
     Spinner spinner_status, spinner_shipping;
     Button bt_save;
+    String auth, valueQR;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,14 +43,32 @@ public class updateProductActivity extends AppCompatActivity {
         getSupportActionBar().hide();
 
         bt_save= findViewById(R.id.up_bt_save);
+        up_et_id  = findViewById(R.id.up_et_id);
+        up_et_date =  findViewById(R.id.up_et_date);
+        up_et_note = findViewById(R.id.up_et_note);
+        up_et_carbon = findViewById(R.id.up_et_carbon);
+
+
+
+        SharedPreferences preferencesxx = updateProductActivity.this.getSharedPreferences("sharedPreferencesUser", Context.MODE_PRIVATE);
+        auth = preferencesxx.getString("token","");
+
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            valueQR = extras.getString("qr");
+            //The key argument here must match that used in the other activity
+        }
+
+
+        up_et_id.setText(valueQR);
+
+
 
         Date c = Calendar.getInstance().getTime();
         System.out.println("Current time => " + c);
 
         SimpleDateFormat df = new SimpleDateFormat("dd-MMM-yyyy", Locale.getDefault());
         String formattedDate = df.format(c);
-
-        up_et_date =  findViewById(R.id.up_et_date);
         up_et_date.setText(formattedDate);
 
 
@@ -81,7 +108,60 @@ public class updateProductActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(),"Saved!", Toast.LENGTH_LONG).show();
+                String status,shipping,note, carbon;
+                carbon = up_et_carbon.getText().toString();
+                status = spinner_status.getSelectedItem().toString();
+                shipping = spinner_shipping.getSelectedItem().toString();
+                note = up_et_note.getText().toString();
+
+                updateData(carbon,formattedDate,status, shipping, note,valueQR);
+
             }
         });
+    }
+
+    private void updateData(String carbon, String formattedDate, String status, String shipping, String note, String valueQR) {
+
+        HashMap<String,String> hashMap=new HashMap<>();
+        hashMap.put("id",valueQR);
+        hashMap.put("carbon", carbon);
+        hashMap.put("date", formattedDate);
+        hashMap.put("destination", "XXX");
+        hashMap.put("shipping_status",shipping);
+        hashMap.put("product_status",status);
+        hashMap.put("note",note);
+
+        updateProductInterface api = retrofitapi.getClient(updateProductActivity.this).create(updateProductInterface.class);
+        Call<updateProductResponse> call = api.inputData("Bearer "+ auth, hashMap);
+
+        try {
+            call.enqueue(new Callback<updateProductResponse>() {
+                @Override
+                public void onResponse(Call<updateProductResponse> call, Response<updateProductResponse> response) {
+
+                    try {
+
+                        if (response.code() == 200){
+                            Toast.makeText(getApplicationContext(), "Successfully Updated!", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(getApplicationContext(), "Failed to Update!", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }catch (Exception e){
+                        Toast.makeText(getApplicationContext(),e.getLocalizedMessage().toLowerCase(Locale.ROOT).toString(), Toast.LENGTH_SHORT).show();
+                    }
+                }
+
+                @Override
+                public void onFailure(Call<updateProductResponse> call, Throwable t) {
+                    Toast.makeText(getApplicationContext(),"Fail!", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+
+        }catch (Exception e){
+            Toast.makeText(this, e.getLocalizedMessage().toLowerCase(Locale.ROOT).toString(), Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
