@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
@@ -18,6 +19,7 @@ import com.example.reconchainapp.trackingProductActivity;
 public class productListFragment extends Fragment {
 
     private FragmentProductlistBinding binding;
+    String valid;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -28,11 +30,17 @@ public class productListFragment extends Fragment {
         View root = binding.getRoot();
 
         ImageView img1,img2,img3,img4;
+        EditText pl_et_search;
 
         img1 = binding.frplImgNext1;
         img2 = binding.frplImgNext2;
         img3 = binding.frplImgNext3;
         img4 = binding.frplImgNext4;
+        pl_et_search = binding.plEtSearch;
+        valid = pl_et_search.getText().toString();
+
+
+
 
         img1.setOnClickListener(new View.OnClickListener() {
             @Override

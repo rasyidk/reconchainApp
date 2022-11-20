@@ -25,17 +25,32 @@
             android:fontFamily="@font/poppins_semibold"
             android:textSize="25dp"/>
 
-        <EditText
-            android:textColor="@color/black"
-            android:textColorHint="@color/hint"
-            android:layout_marginTop="@dimen/mainmarginn"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Search By ID"
-            android:textSize="12dp"
-            android:background="@drawable/round_edittext_white"
-            android:padding="12dp"/>
+            android:layout_height="40dp">
 
+            <EditText
+                android:id="@+id/pl_et_search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="0dp"
+                android:layout_toLeftOf="@id/pl_bt_search"
+                android:background="@drawable/round_edittext_white"
+                android:hint="Search By Name"
+                android:padding="12dp"
+                android:textColor="@color/black"
+                android:textColorHint="@color/hint"
+                android:textSize="12dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_toLeftOf="@id/pl_bt_search"
+                android:layout_alignParentRight="true"
+                android:id="@+id/pl_bt_search"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/ic_baseline_search_24"/>
+
+        </RelativeLayout>
         <TextView
             android:layout_marginTop="@dimen/mainmarginn"
             android:layout_marginBottom="@dimen/mainmarginn"

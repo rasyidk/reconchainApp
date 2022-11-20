@@ -18,7 +18,7 @@ import com.example.reconchainapp.R;
 
 public class editProfileActivity extends AppCompatActivity {
 
-    EditText et_name,et_newpassword, et_company, et_location;
+    EditText et_name,et_newpassword, et_company;
     TextView tv_company;
     Button bt_save,bt_back;
 
@@ -41,12 +41,12 @@ public class editProfileActivity extends AppCompatActivity {
         et_name = findViewById(R.id.ep_et_name);
         et_newpassword = findViewById(R.id.ep_et_newpassword);
         et_company = findViewById(R.id.ep_et_company);
-        et_location = findViewById(R.id.ep_et_location);
+
         tv_company = findViewById(R.id.ep_tv_company);
         bt_save= findViewById(R.id.ep_bt_save);
         bt_back = findViewById(R.id.ep_btback);
 
-        SharedPreferences preferences = editProfileActivity.this.getSharedPreferences("valuser", Context.MODE_PRIVATE);
+        SharedPreferences preferences = editProfileActivity.this.getSharedPreferences("sharedPreferencesUser", Context.MODE_PRIVATE);
         String name = preferences.getString("name","");
         String role = preferences.getString("role","");
         String company = preferences.getString("company","");
@@ -62,7 +62,7 @@ public class editProfileActivity extends AppCompatActivity {
         et_name.setText(name);
         et_newpassword.setText(password);
         et_company.setText(company);
-        et_location.setText(addr);
+
 
         bt_save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,8 +70,7 @@ public class editProfileActivity extends AppCompatActivity {
                 if (role.equals("produsen")){
                     if (et_name.getText().toString().equals("") ||
                             et_newpassword.getText().toString().equals("") ||
-                            et_company.getText().toString().equals("") ||
-                            et_location.getText().toString().equals("")
+                            et_company.getText().toString().equals("")
                     ){
                         Toast.makeText(getApplicationContext(), "Field Cant be Empty!", Toast.LENGTH_SHORT).show();
                     }else {
@@ -79,8 +78,7 @@ public class editProfileActivity extends AppCompatActivity {
                     }
                 }else{
                     if (et_name.getText().toString().equals("") ||
-                            et_newpassword.getText().toString().equals("") ||
-                            et_location.getText().toString().equals("")
+                            et_newpassword.getText().toString().equals("")
                     ){
                         Toast.makeText(getApplicationContext(), "Field Cant be Empty!", Toast.LENGTH_SHORT).show();
                     }else {

@@ -60,6 +60,7 @@ public class logInActivity extends AppCompatActivity {
                 if (et_username.getText().toString().equals("") || et_password.getText().toString().equals("")){
                     Toast.makeText(getApplicationContext(),"field cant be empty!",Toast.LENGTH_LONG).show();
                 }else {
+                    Toast.makeText(getApplicationContext(),"Loading..",Toast.LENGTH_LONG).show();
                     String username, password;
                     username = et_username.getText().toString();
                     password = et_password.getText().toString();
@@ -147,6 +148,7 @@ public class logInActivity extends AppCompatActivity {
                         editorUser.putString("email",response.body().getUser().getEmail());
                         editorUser.putString("role", response.body().getUser().getRole());
                         editorUser.putString("company", response.body().getUser().getCompany());
+                        editorUser.putString("companycode", response.body().getUser().getCompanycode());
                         editorUser.putString("location", response.body().getUser().getLocation());
 //                        editorUser.putString("longitude", response.body().getUser().getLongitude());
 //                        editorUser.putString("latitude", response.body().getUser().getLatitude());

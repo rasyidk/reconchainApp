@@ -3,8 +3,10 @@ package com.example.reconchainapp.input;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -15,6 +17,7 @@ import android.widget.Toast;
 
 import com.example.reconchainapp.R;
 import com.example.reconchainapp.api.retrofitapi;
+import com.example.reconchainapp.navBottomActivity;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -33,8 +36,9 @@ public class updateProductActivity extends AppCompatActivity {
 
     EditText up_et_date,up_et_id,up_et_note,up_et_carbon;
     Spinner spinner_status, spinner_shipping;
-    Button bt_save;
-    String auth, valueQR;
+    Button bt_save,ip_bt_back;
+    String auth, valueQR, slat, slong;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,6 +51,16 @@ public class updateProductActivity extends AppCompatActivity {
         up_et_date =  findViewById(R.id.up_et_date);
         up_et_note = findViewById(R.id.up_et_note);
         up_et_carbon = findViewById(R.id.up_et_carbon);
+        ip_bt_back = findViewById(R.id.ip_bt_back);
+
+        ip_bt_back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent i =  new Intent(updateProductActivity.this, navBottomActivity.class);
+                startActivity(i);
+            }
+        });
 
 
 
@@ -118,6 +132,85 @@ public class updateProductActivity extends AppCompatActivity {
 
             }
         });
+
+        getlonglat();
+        up_et_carbon.setText("calculating....");
+    }
+
+    private void getlonglat() {
+
+        try {
+
+            updateProductInterface api = retrofitapi.getClient(updateProductActivity.this).create(updateProductInterface.class);
+            Call<longlatResponse> cx =  api.getLongitudeLatitude("Bearer "+ auth, valueQR);
+            cx.enqueue(new Callback<longlatResponse>() {
+                @Override
+                public void onResponse(Call<longlatResponse> call, Response<longlatResponse> response) {
+
+                    try {
+                        String longitude = response.body().getLongitude();
+                        String latitude = response.body().getLatitude();
+
+                        Log.d("long", longitude);
+                        Log.d("lat", latitude);
+
+                        double dblong= Double.parseDouble(longitude);
+                        double dblat= Double.parseDouble(latitude);
+
+                        String slat, slong;
+                        SharedPreferences preferencesyyy = updateProductActivity.this.getSharedPreferences("sharedPreferencesUser", Context.MODE_PRIVATE);
+                        slat = preferencesyyy.getString("latitude","");
+                        slong = preferencesyyy.getString("longitude","");
+
+                        Log.d("slat", slat);
+                        Log.d("slong", slong);
+
+                        double dbslong= Double.parseDouble(slong);
+                        double dbslat= Double.parseDouble(slat);
+                        Double pi = 3.14159265358979;
+                        Double lat1 = dblat;
+                        Double lon1 = dblong;
+                        Double lat2 = dbslat;
+                        Double lon2 = dbslong;
+                        Double R = 6371e3;
+
+                        Double latRad1 = lat1 * (pi / 180);
+                        Double latRad2 = lat2 * (pi / 180);
+                        Double deltaLatRad = (lat2 - lat1) * (pi / 180);
+                        Double deltaLonRad = (lon2 - lon1) * (pi / 180);
+
+                        /* RUMUS HAVERSINE */
+                        Double a = Math.sin(deltaLatRad / 2) * Math.sin(deltaLatRad / 2) + Math.cos(latRad1) * Math.cos(latRad2) * Math.sin(deltaLonRad / 2) * Math.sin(deltaLonRad / 2);
+                        Double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                        Double s = R * c; // hasil jarak dalam meter
+
+                        Double x = ((s/1000)/8.39) * 2.64;
+
+//                        Toast.makeText(updateProductActivity.this, String.valueOf(s), Toast.LENGTH_SHORT).show();
+
+
+                        up_et_carbon.setText(String.valueOf(Integer.valueOf(x.intValue())));
+
+                    }catch (Exception e){
+                        Toast.makeText(getApplicationContext(), e.getLocalizedMessage().toString(), Toast.LENGTH_SHORT).show();
+                    }
+
+
+
+
+                }
+
+                @Override
+                public void onFailure(Call<longlatResponse> call, Throwable t) {
+
+                }
+            });
+
+
+        }catch (Exception e){
+            Toast.makeText(getApplicationContext(), e.getLocalizedMessage().toString(), Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     private void updateData(String carbon, String formattedDate, String status, String shipping, String note, String valueQR) {

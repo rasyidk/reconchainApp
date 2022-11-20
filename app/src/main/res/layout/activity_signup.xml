@@ -33,7 +33,7 @@
 
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:padding="10dp"
             android:hint="Name"
             android:background="@drawable/round_edittext"
             android:fontFamily="@font/poppins"
@@ -46,7 +46,7 @@
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:padding="10dp"
             android:hint="Username"
             android:background="@drawable/round_edittext"
             android:fontFamily="@font/poppins"
@@ -59,7 +59,7 @@
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:padding="10dp"
             android:hint="Email"
             android:background="@drawable/round_edittext"
             android:fontFamily="@font/poppins"
@@ -71,7 +71,7 @@
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:padding="10dp"
             android:inputType="textPassword"
             android:hint="Password"
             android:background="@drawable/round_edittext"
@@ -87,7 +87,7 @@
             android:fontFamily="@font/poppins"
             android:hint="Confirm password"
             android:inputType="textPassword"
-            android:padding="15dp"
+            android:padding="10dp"
             android:textColor="@color/color1"
             android:textColorHint="@color/hint" />
 
@@ -101,7 +101,7 @@
             android:editable="false"
             android:fontFamily="@font/poppins"
             android:hint="Role"
-            android:padding="15dp"
+            android:padding="10dp"
             android:textColor="@color/color1"
             android:textColorHint="@color/hint" />
 
@@ -112,7 +112,7 @@
             android:layout_marginTop="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="15dp"
+            android:padding="10dp"
             android:hint="Company"
             android:background="@drawable/round_edittext"
             android:fontFamily="@font/poppins"
@@ -128,7 +128,7 @@
             android:editable="false"
             android:fontFamily="@font/poppins"
             android:hint="Location"
-            android:padding="15dp"
+            android:padding="10dp"
             android:textColor="@color/color1"
             android:textColorHint="@color/hint" />
 

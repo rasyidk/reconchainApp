@@ -250,7 +250,7 @@ public class signupActivity extends AppCompatActivity {
     }
 
     private void signUpAction(String name, String username, String email, String password, String confirmpass, String company, String role, String location) {
-
+        Toast.makeText(getApplicationContext(),"Loading..",Toast.LENGTH_LONG).show();
         SharedPreferences sharedPreferencesLogin = signupActivity.this.getSharedPreferences("sharedPreferencesLogin", Context.MODE_PRIVATE);
         SharedPreferences.Editor editorLogin = sharedPreferencesLogin.edit();
 

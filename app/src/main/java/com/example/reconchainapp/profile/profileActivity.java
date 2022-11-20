@@ -50,7 +50,7 @@ public class profileActivity extends AppCompatActivity {
         tv_role = findViewById(R.id.pr_tv_role);
 
         tv_name.setText(name);
-        tv_id.setText(id);
+        tv_id.setText("Company code: " + id);
         tv_role.setText(role);
 
         pr_btback.setOnClickListener(new View.OnClickListener() {
@@ -149,6 +149,7 @@ public class profileActivity extends AppCompatActivity {
                         Intent i =  new Intent(profileActivity.this, logInActivity.class);
                         startActivity(i);
                         finish();
+
                         break;
 
                     case DialogInterface.BUTTON_NEGATIVE:

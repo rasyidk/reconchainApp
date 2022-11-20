@@ -99,23 +99,6 @@
             android:background="@drawable/round_edittext_white"
             android:textColorHint="@color/hint"/>
 
-        <TextView
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Location"
-            android:fontFamily="@font/poppins_semibold"
-            android:textColor="@color/white"/>
-
-        <EditText
-            android:id="@+id/ep_et_location"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:textColor="@color/black"
-            android:background="@drawable/round_edittext_white"
-            android:textColorHint="@color/hint"/>
-
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/ep_bt_save"
             android:layout_width="match_parent"
